@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Barnabus the Stomper",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "<b>Battlecry:</b> Reduce the\nCost of minions in your deck to (0).",
+    "type": "Minion",
+    "cardClass": "DRUID"
+  },
+  {
+    "name": "Time Warp",
+    "cost": 5,
+    "text": "Take an extra turn.\n<i>(Once per game)</i>",
+    "type": "Spell",
+    "cardClass": "MAGE"
+  },
+  {
+    "name": "Crystal Core",
+    "cost": 5,
+    "text": "For the rest of the game, your minions are 5/5.",
+    "type": "Spell",
+    "cardClass": "ROGUE"
+  },
+  {
+    "name": "Queen Carnassa",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "<b>Rush</b>\n<b>Battlecry:</b> Shuffle 20 Raptors into your deck.",
+    "type": "Minion",
+    "cardClass": "HUNTER"
+  },
+  {
+    "name": "Sulfuras",
+    "cost": 3,
+    "attack": 4,
+    "text": "<b>Battlecry:</b> Your Hero Power becomes 'Deal 8 damage to a random enemy.'",
+    "type": "Weapon",
+    "cardClass": "WARRIOR"
+  },
+  {
+    "name": "Megafin",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "<b>Battlecry:</b> Fill your hand with random Murlocs.",
+    "type": "Minion",
+    "cardClass": "SHAMAN"
+  },
+  {
+    "name": "Nether Portal",
+    "cost": 5,
+    "text": "Open a permanent portal that summons 3/2 Imps.",
+    "type": "Spell",
+    "cardClass": "WARLOCK"
+  },
+  {
+    "name": "Galvadon",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "<b>Battlecry:</b> <b>Adapt</b> 5 times.",
+    "type": "Minion",
+    "cardClass": "PALADIN"
+  },
+  {
+    "name": "Amara, Warden of Hope",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Set your\nhero's Health to 40.",
+    "type": "Minion",
+    "cardClass": "PRIEST"
+  },
+  {
+    "name": "Enter the Lost City",
+    "cost": 1,
+    "text": "[x]<b>Quest:</b> Survive 10 turns.\n<b>Reward: </b>Latorvius, Gaze\nof the City.",
+    "type": "Spell",
+    "cardClass": "WARRIOR"
+  },
+  {
+    "name": "Latorvius, Gaze of the City",
+    "cost": 5,
+    "attack": 8,
+    "health": 8,
+    "text": "[x]<b>Battlecry:</b> Get 2 random\n'Journey to Un'Goro' <b>Quest\nRewards</b>. Shuffle the rest\ninto your deck.",
+    "type": "Minion",
+    "cardClass": "WARRIOR"
+  }
+]
