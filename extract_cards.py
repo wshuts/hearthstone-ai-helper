@@ -1,5 +1,7 @@
 import json
 import os
+import sys
+import argparse
 
 def load_cards(file_path):
     if not os.path.isfile(file_path):
@@ -16,8 +18,16 @@ def parse_dbf_ids(input_string):
     except ValueError:
         raise ValueError("Invalid input: Please enter a comma-separated list of integers.")
 
+def trim_card_fields(cards):
+    basic_keys = ["name", "cost", "attack", "health", "text", "type", "cardClass"]
+    return [{k: c.get(k) for k in basic_keys if k in c} for c in cards]
+
 def main():
-    print("🧭 Welcome to The Maiden Voyage – Card Extractor (v2)")
+    parser = argparse.ArgumentParser(description="Extract specific Hearthstone cards from a JSON file.")
+    parser.add_argument('--basic', action='store_true', help='Only display basic card fields')
+    args = parser.parse_args()
+
+    print("🧭 Welcome to The Maiden Voyage – Card Extractor (v3)")
     file_path = input("Enter the path to your JSON card file: ").strip()
 
     try:
@@ -34,6 +44,9 @@ def main():
         return
 
     filtered_cards = filter_cards_by_dbf_ids(all_cards, target_dbf_ids)
+
+    if args.basic:
+        filtered_cards = trim_card_fields(filtered_cards)
 
     print(f"\n✅ Found {len(filtered_cards)} matching card(s):\n")
     print(json.dumps(filtered_cards, indent=2, ensure_ascii=False))
