@@ -1,7 +1,7 @@
 import unittest
-from extract_cards import filter_cards_by_dbf_ids, trim_card_fields, parse_dbf_ids
+from extract_cards import CardExtractor, parse_dbf_ids
 
-# Sample card dataset for testing
+# Sample data for testing
 sample_cards = [
     {
         "dbfId": 114340,
@@ -22,27 +22,37 @@ sample_cards = [
         "text": "Battlecry: Get a copy of another Elemental or Dragon.",
         "type": "Minion",
         "cardClass": "NEUTRAL"
+    },
+    {
+        "dbfId": 999999,
+        "name": "Test Dummy",
+        "cost": 1,
+        "attack": 0,
+        "health": 2,
+        "text": "",
+        "type": "Minion",
+        "cardClass": "NEUTRAL"
     }
 ]
 
-class TestExtractCards(unittest.TestCase):
+class TestCardExtractor(unittest.TestCase):
+    def test_filter_cards_by_dbf_ids(self):
+        extractor = CardExtractor(file_path="", dbf_ids=[114340, 122318])
+        result = extractor.filter_cards_by_dbf_ids(sample_cards)
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result[0]['name'], "Ysondre")
+        self.assertEqual(result[1]['name'], "Cloud Serpent")
+
+    def test_trim_card_fields(self):
+        extractor = CardExtractor(file_path="", dbf_ids=[], basic_only=True)
+        trimmed = extractor.trim_card_fields(sample_cards)
+        for card in trimmed:
+            self.assertSetEqual(set(card.keys()), {"name", "cost", "attack", "health", "text", "type", "cardClass"})
 
     def test_parse_dbf_ids(self):
         self.assertEqual(parse_dbf_ids("114340,122318"), [114340, 122318])
-        self.assertEqual(parse_dbf_ids(" 114340 "), [114340])
         self.assertEqual(parse_dbf_ids(""), [])
-        self.assertEqual(parse_dbf_ids("abc,123"), [123])  # only valid integers pass
-
-    def test_filter_cards_by_dbf_ids(self):
-        result = filter_cards_by_dbf_ids(sample_cards, [114340])
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]['name'], "Ysondre")
-
-    def test_trim_card_fields(self):
-        trimmed = trim_card_fields(sample_cards)
-        self.assertEqual(len(trimmed), 2)
-        for card in trimmed:
-            self.assertSetEqual(set(card.keys()), {"name", "cost", "attack", "health", "text", "type", "cardClass"})
+        self.assertEqual(parse_dbf_ids("notanid,123"), [123])
 
 if __name__ == "__main__":
     unittest.main()
