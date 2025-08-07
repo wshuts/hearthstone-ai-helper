@@ -25,6 +25,14 @@ def filter_cards_by_id(cards, ids_to_extract):
     return [card for card in cards if card.get("dbfId") in ids_to_extract]
 
 
+def to_basic_fields(card):
+    return {
+        k: card.get(k)
+        for k in ("name", "cost", "attack", "health", "text")
+        if k in card
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', help='Path to JSON config file')
@@ -36,9 +44,13 @@ def main():
     config = load_config(args.config)
     source_file = config["sourceFile"]
     ids_to_extract = config.get("ids", [])
+    basic = bool(config.get("basic"))
 
     cards = load_cards(source_file)
     filtered = filter_cards_by_id(cards, ids_to_extract)
+    if basic:
+        filtered = [to_basic_fields(c) for c in filtered]
+
     print(f"Loaded {len(filtered)} cards")
     print(json.dumps(filtered, indent=2))
 
