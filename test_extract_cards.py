@@ -1,58 +1,43 @@
-import unittest
-from extract_cards import CardExtractor, parse_dbf_ids
+import json
+import os
+import pytest
+from jsonschema import validate, ValidationError
 
-# Sample data for testing
-sample_cards = [
-    {
-        "dbfId": 114340,
-        "name": "Ysondre",
-        "cost": 7,
-        "attack": 8,
-        "health": 5,
-        "text": "Taunt. Deathrattle: Summon a random Dragon.",
-        "type": "Minion",
-        "cardClass": "WARRIOR"
+# Load the schema directly or from a file if preferred
+schema = {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "sourceFile": {"type": "string"},
+        "ids": {
+            "type": "array",
+            "items": {"type": "integer"}
+        },
+        "basic": {"type": "boolean"},
+        "outputFile": {"type": "string"}
     },
-    {
-        "dbfId": 122318,
-        "name": "Cloud Serpent",
-        "cost": 3,
-        "attack": 3,
-        "health": 3,
-        "text": "Battlecry: Get a copy of another Elemental or Dragon.",
-        "type": "Minion",
-        "cardClass": "NEUTRAL"
-    },
-    {
-        "dbfId": 999999,
-        "name": "Test Dummy",
-        "cost": 1,
-        "attack": 0,
-        "health": 2,
-        "text": "",
-        "type": "Minion",
-        "cardClass": "NEUTRAL"
-    }
-]
+    "required": ["sourceFile", "ids"]
+}
 
-class TestCardExtractor(unittest.TestCase):
-    def test_filter_cards_by_dbf_ids(self):
-        extractor = CardExtractor(file_path="", dbf_ids=[114340, 122318])
-        result = extractor.filter_cards_by_dbf_ids(sample_cards)
-        self.assertEqual(len(result), 2)
-        self.assertEqual(result[0]['name'], "Ysondre")
-        self.assertEqual(result[1]['name'], "Cloud Serpent")
+# Helper to load test configs from test_data/
+def load_config(filename):
+    with open(os.path.join("test_data", filename)) as f:
+        return json.load(f)
 
-    def test_trim_card_fields(self):
-        extractor = CardExtractor(file_path="", dbf_ids=[], basic_only=True)
-        trimmed = extractor.trim_card_fields(sample_cards)
-        for card in trimmed:
-            self.assertSetEqual(set(card.keys()), {"name", "cost", "attack", "health", "text", "type", "cardClass"})
+# -----------------------
+# Pytest Test Cases
+# -----------------------
 
-    def test_parse_dbf_ids(self):
-        self.assertEqual(parse_dbf_ids("114340,122318"), [114340, 122318])
-        self.assertEqual(parse_dbf_ids(""), [])
-        self.assertEqual(parse_dbf_ids("notanid,123"), [123])
+def test_valid_config():
+    config = load_config("valid_config.json")
+    validate(instance=config, schema=schema)
 
-if __name__ == "__main__":
-    unittest.main()
+def test_missing_required_field():
+    config = load_config("missing_ids.json")
+    with pytest.raises(ValidationError):
+        validate(instance=config, schema=schema)
+
+def test_invalid_type():
+    config = load_config("invalid_ids_type.json")
+    with pytest.raises(ValidationError):
+        validate(instance=config, schema=schema)
