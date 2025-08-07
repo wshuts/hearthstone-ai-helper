@@ -1,5 +1,5 @@
 {
-  "sourceFile": "standard_cards_aug_2025.json",
+  "sourceFile": "data/standard_cards_aug_2025.json",
   "ids": [114340, 122318],
   "basic": true,
   "outputFile": "output/cards.json"

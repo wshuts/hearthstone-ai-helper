@@ -39,3 +39,13 @@ def test_extract_cards_fails_without_config_handling():
     # Expect a non-zero exit code because config handling isn't implemented yet
     assert result.returncode != 0
     assert "config" in result.stderr.lower() or "unrecognized arguments" in result.stderr.lower()
+
+
+def test_extract_cards_loads_source_file():
+    result = subprocess.run(
+        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        capture_output=True,
+        text=True
+    )
+    assert result.returncode == 0
+    assert "Loaded" in result.stdout  # expecting e.g., "Loaded 123 cards"
