@@ -40,7 +40,6 @@ def test_extract_cards_succeeds_with_valid_config():
     assert "loaded" in result.stdout.lower()
 
 
-
 def test_extract_cards_loads_source_file():
     result = subprocess.run(
         ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
@@ -49,3 +48,14 @@ def test_extract_cards_loads_source_file():
     )
     assert result.returncode == 0
     assert "Loaded" in result.stdout  # expecting e.g., "Loaded 123 cards"
+
+
+def test_extract_cards_filters_by_ids():
+    result = subprocess.run(
+        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        capture_output=True,
+        text=True
+    )
+    assert result.returncode == 0
+    # Expect exactly 2 cards printed or mentioned in stdout
+    assert "2 cards" in result.stdout.lower()
