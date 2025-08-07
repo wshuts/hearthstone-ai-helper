@@ -59,3 +59,15 @@ def test_extract_cards_filters_by_ids():
     assert result.returncode == 0
     # Expect exactly 2 cards printed or mentioned in stdout
     assert "2 cards" in result.stdout.lower()
+
+
+def test_extract_cards_outputs_only_basic_fields_when_flagged():
+    result = subprocess.run(
+        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        capture_output=True,
+        text=True
+    )
+    assert result.returncode == 0
+
+    # Look for something that shouldn't appear in basic fields
+    assert "rarity" not in result.stdout.lower()

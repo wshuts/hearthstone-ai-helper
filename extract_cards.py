@@ -40,6 +40,7 @@ def main():
     cards = load_cards(source_file)
     filtered = filter_cards_by_id(cards, ids_to_extract)
     print(f"Loaded {len(filtered)} cards")
+    print(json.dumps(filtered, indent=2))
 
 
 if __name__ == "__main__":
