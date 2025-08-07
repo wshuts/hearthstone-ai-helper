@@ -4,7 +4,7 @@ import sys
 
 def load_config(path):
     try:
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"Error loading config: {e}", file=sys.stderr)
@@ -19,8 +19,15 @@ def main():
         parser.error("Missing required argument: --config")
 
     config = load_config(args.config)
-    # For now, just print the loaded config and exit
-    print("✅ Config loaded:", config)
+
+    # ✅ New logic: load source file
+    try:
+        with open(config["sourceFile"], encoding="utf-8") as f:
+            cards = json.load(f)
+        print(f"Loaded {len(cards)} cards")
+    except Exception as e:
+        print(f"Error loading source file: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
