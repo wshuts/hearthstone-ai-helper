@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Bursting Geyser",
+    "cost": 0,
+    "text": "<b>Deathrattle:</b> Deal 10 damage to all enemies.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Bursting Geyser",
+    "cost": 0,
+    "text": "<b>Deathrattle:</b> Deal 5 damage to all enemies.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Bursting Geyser",
+    "cost": 0,
+    "text": "<b>Deathrattle:</b> Deal 3 damage to all enemies.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Nesting Grounds",
+    "cost": 0,
+    "text": "Summon a 2/1 Raptor with <b>Rush</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Nesting Grounds",
+    "cost": 0,
+    "text": "Summon three 2/1 Raptors with <b>Rush</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Nesting Grounds",
+    "cost": 0,
+    "text": "Summon six 2/1 Raptors with <b>Rush</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Shining Moonlight",
+    "cost": 0,
+    "text": "Your next spell has <b>Spell Damage +1</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Shining Moonlight",
+    "cost": 0,
+    "text": "Your next spell has <b>Spell Damage +4</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Shining Moonlight",
+    "cost": 0,
+    "text": "Your next spell has <b>Spell Damage +2</b>.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Runic Inscriptions",
+    "cost": 0,
+    "text": "<b>Discover</b> a spell. It costs (1) less.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Runic Inscriptions",
+    "cost": 0,
+    "text": "<b>Discover</b> a spell. It costs (4) less.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Runic Inscriptions",
+    "cost": 0,
+    "text": "<b>Discover</b> a spell. It costs (7) less.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Snapping Plants",
+    "cost": 0,
+    "text": "Give your characters +1 Attack this turn.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Snapping Plants",
+    "cost": 0,
+    "text": "Give your characters +2 Attack this turn.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Snapping Plants",
+    "cost": 0,
+    "text": "Give your characters +4 Attack this turn.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Lava Stream",
+    "cost": 0,
+    "text": "Gain 3 Armor.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Lava Stream",
+    "cost": 0,
+    "text": "Gain 6 Armor.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Lava Stream",
+    "cost": 0,
+    "text": "Gain 12 Armor.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Radiant Crystals",
+    "cost": 0,
+    "text": "Summon a 1/1 copy of a friendly minion.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Radiant Crystals",
+    "cost": 0,
+    "text": "Summon a 5/5 copy of a friendly minion.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  },
+  {
+    "name": "Radiant Crystals",
+    "cost": 0,
+    "text": "Summon a 10/10 copy of a friendly minion.",
+    "type": "Spell",
+    "cardClass": "NEUTRAL"
+  }
+]
