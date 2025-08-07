@@ -12,17 +12,16 @@ def load_config(path):
         sys.exit(1)
 
 
-def load_cards(config):
+def load_cards(source_file):
     try:
-        with open(config["sourceFile"], encoding="utf-8") as f:
+        with open(source_file, encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"Error loading source file: {e}", file=sys.stderr)
         sys.exit(1)
 
 
-def filter_cards(config, cards):
-    ids_to_extract = config.get("ids", [])
+def filter_cards_by_id(cards, ids_to_extract):
     return [card for card in cards if card.get("dbfId") in ids_to_extract]
 
 
@@ -35,8 +34,11 @@ def main():
         parser.error("Missing required argument: --config")
 
     config = load_config(args.config)
-    cards = load_cards(config)
-    filtered = filter_cards(config, cards)
+    source_file = config["sourceFile"]
+    ids_to_extract = config.get("ids", [])
+
+    cards = load_cards(source_file)
+    filtered = filter_cards_by_id(cards, ids_to_extract)
     print(f"Loaded {len(filtered)} cards")
 
 
