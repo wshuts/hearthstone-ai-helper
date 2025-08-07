@@ -30,15 +30,15 @@ def test_invalid_type():
         validate(instance=config, schema=config_schema)
 
 
-def test_extract_cards_fails_without_config_handling():
+def test_extract_cards_succeeds_with_valid_config():
     result = subprocess.run(
         ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
-    # Expect a non-zero exit code because config handling isn't implemented yet
-    assert result.returncode != 0
-    assert "config" in result.stderr.lower() or "unrecognized arguments" in result.stderr.lower()
+    assert result.returncode == 0
+    assert "loaded" in result.stdout.lower()
+
 
 
 def test_extract_cards_loads_source_file():
