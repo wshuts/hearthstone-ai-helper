@@ -3,10 +3,10 @@ import os
 import subprocess
 
 import pytest
-from jsonschema import validate, ValidationError
+from jsonschema import ValidationError, validate
 
 from extract_cards import to_basic_fields
-from schemas import config_schema  # ✅ Now imported
+from schemas import config_schema
 
 
 # ✅ Reusable loader
@@ -76,8 +76,8 @@ def test_extract_cards_outputs_only_basic_fields_when_flagged():
 
 
 def test_to_basic_fields_strips_non_basic():
-    card = {"name":"X","cost":3,"attack":2,"health":4,"text":"t","rarity":"Epic"}
-    assert to_basic_fields(card) == {"name":"X","cost":3,"attack":2,"health":4,"text":"t"}
+    card = {"name": "X", "cost": 3, "attack": 2, "health": 4, "text": "t", "rarity": "Epic"}
+    assert to_basic_fields(card) == {"name": "X", "cost": 3, "attack": 2, "health": 4, "text": "t"}
 
 
 def test_extract_cards_writes_to_output_file(tmp_path):
@@ -91,7 +91,7 @@ def test_extract_cards_writes_to_output_file(tmp_path):
         "basic": True,
         "outputFile": str(output_path)
     }
-    import json
+
     config_path.write_text(json.dumps(config_data), encoding="utf-8")
 
     # Run CLI
