@@ -65,8 +65,10 @@ def main():
 
     if output_file:
         write_output(output_file, filtered)
-    print(f"Loaded {len(filtered)} cards")
-    print(json.dumps(filtered, indent=2))
+        # no stdout when writing to a file
+    else:
+        print(f"Loaded {len(filtered)} cards")
+        print(json.dumps(filtered, indent=2))
 
 
 if __name__ == "__main__":
