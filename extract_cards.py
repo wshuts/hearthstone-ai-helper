@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import sys
 
 
@@ -33,6 +34,16 @@ def to_basic_fields(card):
     }
 
 
+def write_output(path, data):
+    try:
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"Error writing output file: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', help='Path to JSON config file')
@@ -53,8 +64,7 @@ def main():
         filtered = [to_basic_fields(c) for c in filtered]
 
     if output_file:
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(filtered, f, indent=2)
+        write_output(output_file, filtered)
     print(f"Loaded {len(filtered)} cards")
     print(json.dumps(filtered, indent=2))
 
