@@ -1,6 +1,7 @@
 import json
-import os
 import subprocess
+import sys
+from pathlib import Path
 
 import pytest
 from jsonschema import ValidationError, validate
@@ -11,8 +12,8 @@ from schemas import config_schema
 
 # ✅ Reusable loader
 def load_config(filename):
-    with open(os.path.join("test_data", filename)) as f:
-        return json.load(f)
+    path = Path("test_data") / filename
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def test_valid_config():
@@ -44,7 +45,7 @@ def test_extract_cards_succeeds_with_valid_config():
 
 def test_extract_cards_loads_source_file():
     result = subprocess.run(
-        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -54,7 +55,7 @@ def test_extract_cards_loads_source_file():
 
 def test_extract_cards_filters_by_ids():
     result = subprocess.run(
-        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -65,7 +66,7 @@ def test_extract_cards_filters_by_ids():
 
 def test_extract_cards_outputs_only_basic_fields_when_flagged():
     result = subprocess.run(
-        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -82,20 +83,20 @@ def test_to_basic_fields_strips_non_basic():
 
 def test_extract_cards_writes_to_output_file(tmp_path):
     # Arrange a temp config that includes outputFile
-    source_path = os.path.abspath("data/standard_cards_aug_2025.json")
+    source_path = Path("data/standard_cards_aug_2025.json").resolve()
     output_path = tmp_path / "test_results.json"
     config_data = {
-        "sourceFile": source_path,
+        "sourceFile": str(source_path),
         "ids": [114340, 122318],
         "basic": True,
         "outputFile": str(output_path)
     }
     config_path = tmp_path / "config.json"
-    config_path.write_text(json.dumps(config_data), encoding="utf-8")
+    config_path.write_text(json.dumps(config_data, ensure_ascii=False), encoding="utf-8")
 
     # Act: run the CLI with --config pointing to our temp config
     result = subprocess.run(
-        ["python", "extract_cards.py", "--config", str(config_path)],
+        [sys.executable, "extract_cards.py", "--config", str(config_path)],
         capture_output=True,
         text=True
     )

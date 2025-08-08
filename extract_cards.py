@@ -1,13 +1,13 @@
 import argparse
 import json
-import os
 import sys
+from pathlib import Path
 
 
 def load_config(path):
     try:
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
+        p = Path(path)
+        return json.loads(p.read_text(encoding="utf-8"))
     except Exception as e:
         print(f"Error loading config: {e}", file=sys.stderr)
         sys.exit(1)
@@ -15,8 +15,8 @@ def load_config(path):
 
 def load_cards(source_file):
     try:
-        with open(source_file, encoding="utf-8") as f:
-            return json.load(f)
+        p = Path(source_file)
+        return json.loads(p.read_text(encoding="utf-8"))
     except Exception as e:
         print(f"Error loading source file: {e}", file=sys.stderr)
         sys.exit(1)
@@ -36,9 +36,12 @@ def to_basic_fields(card):
 
 def write_output(path, data):
     try:
-        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        out = Path(path)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2),
+            encoding="utf-8"
+        )
     except Exception as e:
         print(f"Error writing output file: {e}", file=sys.stderr)
         sys.exit(1)
