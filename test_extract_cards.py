@@ -79,3 +79,33 @@ def test_to_basic_fields_strips_non_basic():
     card = {"name":"X","cost":3,"attack":2,"health":4,"text":"t","rarity":"Epic"}
     assert to_basic_fields(card) == {"name":"X","cost":3,"attack":2,"health":4,"text":"t"}
 
+
+def test_extract_cards_writes_to_output_file(tmp_path):
+    output_path = tmp_path / "test_results.json"
+
+    # Copy or reuse a valid config, but point outputFile to our temp path
+    config_path = tmp_path / "config.json"
+    config_data = {
+        "sourceFile": "data/standard_cards_aug_2025.json",
+        "ids": [114340, 122318],
+        "basic": True,
+        "outputFile": str(output_path)
+    }
+    import json
+    config_path.write_text(json.dumps(config_data), encoding="utf-8")
+
+    # Run CLI
+    result = subprocess.run(
+        ["python", "extract_cards.py", "--config", str(config_path)],
+        capture_output=True,
+        text=True
+    )
+
+    # Expect success
+    assert result.returncode == 0
+    # File should exist
+    assert output_path.exists()
+    # File should contain valid JSON
+    loaded = json.loads(output_path.read_text(encoding="utf-8"))
+    assert isinstance(loaded, list)
+    assert all(isinstance(c, dict) for c in loaded)
