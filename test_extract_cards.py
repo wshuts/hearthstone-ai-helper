@@ -85,8 +85,9 @@ def test_extract_cards_writes_to_output_file(tmp_path):
 
     # Copy or reuse a valid config, but point outputFile to our temp path
     config_path = tmp_path / "config.json"
+    source_path = os.path.abspath("data/standard_cards_aug_2025.json")
     config_data = {
-        "sourceFile": "data/standard_cards_aug_2025.json",
+        "sourceFile": source_path,
         "ids": [114340, 122318],
         "basic": True,
         "outputFile": str(output_path)
