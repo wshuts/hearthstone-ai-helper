@@ -45,12 +45,16 @@ def main():
     source_file = config["sourceFile"]
     ids_to_extract = config.get("ids", [])
     basic = bool(config.get("basic"))
+    output_file = config.get("outputFile")
 
     cards = load_cards(source_file)
     filtered = filter_cards_by_id(cards, ids_to_extract)
     if basic:
         filtered = [to_basic_fields(c) for c in filtered]
 
+    if output_file:
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(filtered, f, indent=2)
     print(f"Loaded {len(filtered)} cards")
     print(json.dumps(filtered, indent=2))
 

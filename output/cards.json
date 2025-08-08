@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Ysondre",
+    "cost": 7,
+    "attack": 8,
+    "health": 5,
+    "text": "[x]<b>Taunt</b>. <b>Deathrattle:</b> Summon\na random Dragon for each\ntime Ysondre has died\nthis game."
+  },
+  {
+    "name": "Cloud Serpent",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Battlecry:</b> Get a copy\nof another Elemental or\nDragon in your hand."
+  }
+]
