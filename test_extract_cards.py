@@ -81,32 +81,31 @@ def test_to_basic_fields_strips_non_basic():
 
 
 def test_extract_cards_writes_to_output_file(tmp_path):
-    output_path = tmp_path / "test_results.json"
-
-    # Copy or reuse a valid config, but point outputFile to our temp path
-    config_path = tmp_path / "config.json"
+    # Arrange a temp config that includes outputFile
     source_path = os.path.abspath("data/standard_cards_aug_2025.json")
+    output_path = tmp_path / "test_results.json"
     config_data = {
         "sourceFile": source_path,
         "ids": [114340, 122318],
         "basic": True,
         "outputFile": str(output_path)
     }
-
+    config_path = tmp_path / "config.json"
     config_path.write_text(json.dumps(config_data), encoding="utf-8")
 
-    # Run CLI
+    # Act: run the CLI with --config pointing to our temp config
     result = subprocess.run(
         ["python", "extract_cards.py", "--config", str(config_path)],
         capture_output=True,
         text=True
     )
 
-    # Expect success
+    # Assert: command succeeded
     assert result.returncode == 0
-    # File should exist
+    # When writing to a file, stdout should be silent
+    assert result.stdout.strip() == ""
+    # File exists and is valid JSON list of dicts
     assert output_path.exists()
-    # File should contain valid JSON
     loaded = json.loads(output_path.read_text(encoding="utf-8"))
     assert isinstance(loaded, list)
     assert all(isinstance(c, dict) for c in loaded)
