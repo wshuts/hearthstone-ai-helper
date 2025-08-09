@@ -1,5 +1,23 @@
 [
   {
+    "name": "Fire Plume Ridge",
+    "cost": 10,
+    "health": 3,
+    "text": "{0} {1}"
+  },
+  {
+    "name": "Terror Run",
+    "cost": 5,
+    "health": 3,
+    "text": "{0} {1}"
+  },
+  {
+    "name": "Un'Goro Jungle",
+    "cost": 1,
+    "health": 3,
+    "text": "{0} {1}"
+  },
+  {
     "name": "Elise the Navigator",
     "cost": 4,
     "attack": 3,
