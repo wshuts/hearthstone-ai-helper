@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Illidari Inquisitor",
+    "cost": 8,
+    "attack": 8,
+    "health": 8,
+    "text": "<b>Rush</b>. After your hero attacks an enemy, this attacks it too.",
+    "dbfId": 66176
+  },
+  {
+    "name": "Illidari Studies",
+    "cost": 1,
+    "text": "<b>Discover</b> an <b>Outcast</b> card. Your next one costs (1) less.",
+    "dbfId": 97377
+  },
+  {
+    "name": "Red Card",
+    "cost": 1,
+    "text": "Make a minion go <b>Dormant</b> for 2 turns.",
+    "dbfId": 104515
+  },
+  {
+    "name": "Magtheridon, Unreleased",
+    "cost": 8,
+    "attack": 12,
+    "health": 12,
+    "text": "[x]<b>Dormant</b> for 2 turns.\nWhile <b>Dormant</b>, deal 3\ndamage to all enemies at\nthe end of your turn.",
+    "dbfId": 104521
+  },
+  {
+    "name": "Return Policy",
+    "cost": 3,
+    "text": "<b>Discover</b> a friendly <b>Deathrattle</b> card you've played this game.\nTrigger its <b>Deathrattle</b>.",
+    "dbfId": 105514
+  },
+  {
+    "name": "Colifero the Artist",
+    "cost": 8,
+    "attack": 6,
+    "health": 5,
+    "text": "[x]<b>Battlecry:</b> Draw a minion.\nTransform all other friendly\nminions into copies of it.",
+    "dbfId": 105522
+  },
+  {
+    "name": "Cliff Dive",
+    "cost": 7,
+    "text": "[x]Summon 2 minions\nfrom your deck and give\nthem <b>Rush</b>. They go back\nat the end of your turn.",
+    "dbfId": 106583
+  },
+  {
+    "name": "Dangerous Cliffside",
+    "cost": 4,
+    "health": 3,
+    "text": "[x]Summon two 1/1\nPirates with <b>Charge</b>.\nAfter your hero attacks,\nreopen this.",
+    "dbfId": 106614
+  },
+  {
+    "name": "Ravenous Felhunter",
+    "cost": 5,
+    "attack": 5,
+    "health": 3,
+    "text": "<b>Deathrattle:</b> Resurrect a friendly <b>Deathrattle</b> minion that costs (4) or less. Summon a copy of it.",
+    "dbfId": 114497
+  },
+  {
+    "name": "Infiltrate",
+    "cost": 3,
+    "text": "Choose a minion.\nDeal $3 damage to all other minions.",
+    "dbfId": 114513
+  },
+  {
+    "name": "Grim Harvest",
+    "cost": 2,
+    "text": "Draw a card.\nSummon a random <b>Dormant</b> Dreadseed.",
+    "dbfId": 114654
+  },
+  {
+    "name": "Wyvern's Slumber",
+    "cost": 3,
+    "text": "<b>Choose One -</b> Summon two <b>Dormant</b> Dreadseeds; or Deal $2 damage to all minions.",
+    "dbfId": 115198
+  },
+  {
+    "name": "Infestation",
+    "cost": 2,
+    "text": "[x]Get two 1-Cost Gorishi\nStingers. Each one deals\n$2 damage and summons\na 2/1 Grub with <b>Rush</b>.",
+    "dbfId": 117686
+  },
+  {
+    "name": "Insect Claw",
+    "cost": 3,
+    "attack": 2,
+    "text": "After your hero attacks, summon a 2/1 Grub with <b>Rush</b>.",
+    "dbfId": 117813
+  },
+  {
+    "name": "Blob of Tar",
+    "cost": 4,
+    "attack": 2,
+    "health": 4,
+    "text": "[x]<b>Poisonous</b>, <b>Taunt</b>\n<b>Deathrattle:</b> Summon a 1/2\nBlob with <b>Poisonous</b> and a\n1/2 Blob with <b>Taunt</b>.",
+    "dbfId": 118279
+  },
+  {
+    "name": "Tuskpiercer",
+    "cost": 1,
+    "attack": 1,
+    "text": "[x]<b>Deathrattle:</b> Draw a\n<b>Deathrattle</b> minion.",
+    "dbfId": 120785
+  }
+]
