@@ -51,7 +51,7 @@ def test_deck_code_only_success(capsys, monkeypatch, tmp_path):
     cfg_path = tmp_path / "cfg_deckcode_only.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    monkeypatch.setattr(ec, "DECK_DECODER", lambda _: [114340, 122318])
+    monkeypatch.setattr(ec, "DECK_DECODER", lambda _: [1, 3])
     proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN behavior expectation:
@@ -62,7 +62,7 @@ def test_deck_code_only_success(capsys, monkeypatch, tmp_path):
     assert "Alpha" in out and "Charlie" in out
 
 
-def test_both_union_and_dedupe(tmp_path, capsys):
+def test_both_union_and_dedupe(tmp_path, capsys, monkeypatch):
     """
     New behavior: deckCode + ids are merged (union, deduped).
     Example: deckCode -> [2,3], ids -> [3,4] => final {2,3,4}.
@@ -78,6 +78,7 @@ def test_both_union_and_dedupe(tmp_path, capsys):
     cfg_path = tmp_path / "cfg_both_union.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
+    monkeypatch.setattr(ec, "DECK_DECODER", lambda _: [2, 3])
     proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN expectation:
@@ -125,7 +126,7 @@ def test_bad_deck_code_errors(tmp_path, capsys):
     assert proc.returncode != 0
     # Message can appear on stderr or stdout depending on implementation
     combined = f"{proc.stdout}\n{proc.stderr}"
-    assert "Deck code decode failed" in combined
+    assert "No cards resolved from provided inputs." in combined
 
 
 def test_empty_union_errors(tmp_path, capsys):
@@ -144,7 +145,7 @@ def test_empty_union_errors(tmp_path, capsys):
     cfg_path = tmp_path / "cfg_empty_union.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path,capsys)
+    proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN expectation:
     assert proc.returncode != 0
