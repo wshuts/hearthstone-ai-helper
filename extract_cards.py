@@ -1,147 +1,156 @@
 import argparse
 import json
 import sys
-import os
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Callable, Iterable, Any
 
 
-def load_config(path):
+class ConfigError(Exception):
+    """Configuration-related error."""
+    pass
+
+
+class DataError(Exception):
+    """Domain/data-related error."""
+    pass
+
+
+class DeckCodeError(Exception):
+    """Deck code decoding error."""
+    pass
+
+
+class IOErrorEx(Exception):
+    """I/O wrapper to keep exception taxonomy clear."""
+    pass
+
+
+@dataclass(frozen=True)
+class Config:
+    source_file: Path
+    ids: list[int]
+    basic: bool = False
+    output_file: Path | None = None
+
+
+def load_config(path: str | Path) -> dict:
+    p = Path(path)
     try:
-        p = Path(path)
         return json.loads(p.read_text(encoding="utf-8"))
     except Exception as e:
-        print(f"Error loading config: {e}", file=sys.stderr)
-        sys.exit(1)
-
-
-def load_cards(source_file):
+        raise ConfigError(f"Error loading config: {e}") from e
+def load_cards(source_file: str | Path) -> list[dict]:
+    p = Path(source_file)
     try:
-        p = Path(source_file)
-        return json.loads(p.read_text(encoding="utf-8"))
+        data = json.loads(p.read_text(encoding="utf-8"))
     except Exception as e:
-        print(f"Error loading source file: {e}", file=sys.stderr)
-        sys.exit(1)
+        raise IOErrorEx(f"Error loading source file: {e}") from e
+    if not isinstance(data, list):
+        raise DataError("Source JSON must be a list of card objects.")
+    return data
 
 
-def filter_cards_by_id(cards, ids_to_extract):
-    return [card for card in cards if card.get("dbfId") in ids_to_extract]
+def filter_cards_by_id(cards: Iterable[dict], ids_to_extract: list[int]) -> list[dict]:
+    """
+    Return cards in the same order as ids_to_extract for determinism.
+    """
+    by_id = {c.get("dbfId"): c for c in cards}
+    return [by_id[i] for i in ids_to_extract if i in by_id]
 
 
-def to_basic_fields(card):
-    return {
-        k: card.get(k)
-        for k in ("name", "cost", "attack", "health", "text")
-        if k in card
-    }
+def to_basic_fields(card: dict) -> dict:
+    # Include dbfId for traceability.
+    keys = ("name", "cost", "attack", "health", "text", "dbfId")
+    return {k: card.get(k) for k in keys if k in card}
 
 
-def write_output(path, data):
+def write_output(path: str | Path, data: Any) -> None:
+    out = Path(path)
     try:
-        out = Path(path)
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(
-            json.dumps(data, ensure_ascii=False, indent=2),
-            encoding="utf-8"
-        )
+        out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     except Exception as e:
-        print(f"Error writing output file: {e}", file=sys.stderr)
-        sys.exit(1)
+        raise IOErrorEx(f"Error writing output file: {e}") from e
 
 
-def _running_under_pytest() -> bool:
-    """Return True if tests are running under pytest."""
-    return ("pytest" in sys.modules) or bool(os.getenv("PYTEST_CURRENT_TEST"))
+DeckDecoder = Callable[[str], list[int]]
 
-def validate_config(cfg: dict):
+
+def validate_config(cfg: dict) -> None:
     """
     Ensure required fields are present and at least one of deckCode/ids is provided.
     """
     if "sourceFile" not in cfg:
-        print("Config error: missing required field 'sourceFile'.", file=sys.stderr)
-        sys.exit(2)
+        raise ConfigError("Missing required field 'sourceFile'.")
     if not cfg.get("deckCode") and not cfg.get("ids"):
-        print("Config error: provide 'deckCode' or 'ids'.", file=sys.stderr)
-        sys.exit(2)
+        raise ConfigError("Provide 'deckCode' or 'ids'.")
 
-def decode_deck_code(deck_code: str):
+
+def decode_deck_code_real(deck_code: str) -> list[int]:
     """
-    Decode a Hearthstone deck code into a list of dbfIds.
-    - In CLI/real usage: always try to decode with hearthstone.deckstrings.
-    - In pytest: allow placeholder codes to avoid external dependencies.
+    Decode a Hearthstone deck code into a list of dbfIds using hearthstone.deckstrings.
     """
-    # Try real decoding first
     try:
         from hearthstone import deckstrings  # type: ignore
         deck = deckstrings.Deck.from_deckstring(deck_code)
         return [dbf for (dbf, _count) in deck.cards]
-    except Exception:
-        # Only allow placeholders if running under pytest
-        if _running_under_pytest():
-            if deck_code == "AAECA-PLACEHOLDER":
-                return [1, 3]  # Alpha, Charlie
-            if deck_code == "AAECA-PLACEHOLDER-UNION":
-                return [2, 3]  # Bravo, Charlie
-            if deck_code == "AAECA-DECODES-TO-EMPTY":
-                return []
-            if deck_code == "INVALID_CODE":
-                raise ValueError("Deck code decode failed: invalid deck code")
-        # Not a placeholder or not in pytest → friendly CLI message
-        raise ValueError(
-            "Deck code decode failed. Ensure it's valid or install 'hearthstone' with: pip install hearthstone"
-        )
+    except Exception as e:
+        raise DeckCodeError(
+            "Deck code decode failed. Ensure it's valid or install 'hearthstone' (pip install hearthstone)."
+        ) from e
 
-def resolve_ids_from_config(cfg: dict):
+def resolve_ids_from_config(cfg: dict, deck_decoder: DeckDecoder) -> list[int]:
     """
     Merge ids from deckCode (if present) and ids list (if present).
     Return a sorted list of unique ids.
     """
-    ids = set()
+    ids: set[int] = set()
     if cfg.get("deckCode"):
-        try:
-            ids.update(decode_deck_code(cfg["deckCode"]))
-        except ValueError as e:
-            # Surface friendly error and non-zero exit
-            print(str(e), file=sys.stderr)
-            sys.exit(3)
+        ids.update(deck_decoder(cfg["deckCode"]))
     if cfg.get("ids") is not None:
         try:
             ids.update(int(x) for x in cfg.get("ids", []))
-        except Exception:
-            print("Config error: 'ids' must be an array of integers.", file=sys.stderr)
-            sys.exit(2)
+        except Exception as e:
+            raise ConfigError("'ids' must be an array of integers.") from e
     if not ids:
-        print("No cards resolved from provided inputs.", file=sys.stderr)
-        sys.exit(4)
+        raise DataError("No cards resolved from provided inputs.")
     return sorted(ids)
 
-def main():
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', help='Path to JSON config file')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if not args.config:
         parser.error("Missing required argument: --config")
 
-    config = load_config(args.config)
-    validate_config(config)
-    source_file = config["sourceFile"]
-    basic = bool(config.get("basic"))
-    output_file = config.get("outputFile")
+    try:
+        raw_cfg = load_config(args.config)
+        validate_config(raw_cfg)
+        source_file = raw_cfg["sourceFile"]
+        basic = bool(raw_cfg.get("basic"))
+        output_file = raw_cfg.get("outputFile")
 
-    cards = load_cards(source_file)
-    # Resolve final id set from deckCode and/or ids
-    ids_to_extract = resolve_ids_from_config(config)
-    filtered = filter_cards_by_id(cards, ids_to_extract)
-    if basic:
-        filtered = [to_basic_fields(c) for c in filtered]
+        cards = load_cards(source_file)
+        # Resolve final id set from deckCode and/or ids
+        ids_to_extract = resolve_ids_from_config(raw_cfg, decode_deck_code_real)
+        filtered = filter_cards_by_id(cards, ids_to_extract)
+        if basic:
+            filtered = [to_basic_fields(c) for c in filtered]
 
-    if output_file:
-        write_output(output_file, filtered)
-        # no stdout when writing to a file
-    else:
-        print(f"Loaded {len(filtered)} cards")
-        print(json.dumps(filtered, indent=2))
+        if output_file:
+            write_output(output_file, filtered)
+        else:
+            print(json.dumps(filtered, indent=2))
+        return 0
+    except (ConfigError, DeckCodeError, DataError, IOErrorEx) as e:
+        print(str(e), file=sys.stderr)
+        return 2
+    except Exception as e:
+        print(f"Unexpected error: {e}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
