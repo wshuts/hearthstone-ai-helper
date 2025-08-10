@@ -1,0 +1,14 @@
+Subject: [PATCH] this is a patch
+---
+Index: patch-format.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/patch-format.txt b/patch-format.txt
+new file mode 100644
+--- /dev/null	(date 1754846985236)
++++ b/patch-format.txt	(date 1754846985236)
+@@ -0,0 +1,1 @@
++How do we format a patch?
+\ No newline at end of file
