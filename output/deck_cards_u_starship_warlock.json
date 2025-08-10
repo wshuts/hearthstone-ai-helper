@@ -1,0 +1,145 @@
+[
+  {
+    "name": "Dirty Rat",
+    "cost": 2,
+    "attack": 2,
+    "health": 6,
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Your opponent\nsummons a random minion\nfrom their hand.",
+    "dbfId": 102225
+  },
+  {
+    "name": "Cursed Campaign",
+    "cost": 4,
+    "text": "[x]Give a friendly minion\n\"<b>Deathrattle:</b> Summon two\ncopies of this minion that\nare <b>Dormant</b> for 2 turns.\"",
+    "dbfId": 104862
+  },
+  {
+    "name": "Wheel of DEATH!!!",
+    "cost": 8,
+    "text": "Destroy your deck.\nIn 5 turns, destroy\nthe enemy hero.",
+    "dbfId": 104938
+  },
+  {
+    "name": "Table Flip",
+    "cost": 10,
+    "text": "Deal $3 damage to all enemy minions.\nCosts (1) less for each other card in your hand.",
+    "dbfId": 105097
+  },
+  {
+    "name": "Summoner Darkmarrow",
+    "cost": 4,
+    "attack": 4,
+    "health": 4,
+    "text": "[x]<b>Death Knight Tourist</b>\nYour <b>Deathrattles</b> trigger twice.\nAfter you play a <b>Deathrattle</b>\nminion, destroy it.",
+    "dbfId": 105543
+  },
+  {
+    "name": "Arkonite Defense Crystal",
+    "cost": 5,
+    "attack": 4,
+    "health": 5,
+    "text": "<b>Taunt</b>\n<b>Deathrattle:</b> Gain 4 Armor. <b>Starship Piece</b>",
+    "dbfId": 110091
+  },
+  {
+    "name": "Felfire Thrusters",
+    "cost": 3,
+    "attack": 2,
+    "health": 4,
+    "text": "[x]<b><b>Spellburst</b>:</b> Deal this\nminion's Attack damage to\n2 random enemy minions.\n<b>Starship Piece</b>",
+    "dbfId": 110113
+  },
+  {
+    "name": "Heart of the Legion",
+    "cost": 2,
+    "attack": 3,
+    "health": 2,
+    "text": "<b>Lifesteal</b>\n<b>Starship Piece</b>",
+    "dbfId": 110235
+  },
+  {
+    "name": "The Exodar",
+    "cost": 7,
+    "attack": 6,
+    "health": 8,
+    "text": "<b>Battlecry:</b> If you're building a <b>Starship</b>, launch it and choose a Protocol!",
+    "dbfId": 110326
+  },
+  {
+    "name": "The Ceaseless Expanse",
+    "cost": 125,
+    "attack": 10,
+    "health": 10,
+    "text": "[x]Costs (1) less for each time\na card was drawn, played, or\ndestroyed. <b>Battlecry:</b> Destroy\nall other minions.",
+    "dbfId": 111914
+  },
+  {
+    "name": "Kil'jaeden",
+    "cost": 7,
+    "attack": 7,
+    "health": 7,
+    "text": "[x]<b>Battlecry:</b> Replace your deck\nwith an endless portal of\nDemons. Each turn, they gain\nan additional +2/+2.",
+    "dbfId": 112361
+  },
+  {
+    "name": "Eternal Layover",
+    "cost": 4,
+    "text": "[x]Give ALL minions <b>Reborn</b>,\nthen destroy all minions.",
+    "dbfId": 112372
+  },
+  {
+    "name": "Ysera, Emerald Aspect",
+    "cost": 9,
+    "attack": 4,
+    "health": 12,
+    "text": "[x]<b>Start of Game:</b> Increase both\nplayers'maximum Mana by 5.\n<b>Battlecry:</b> Gain 3\nMana Crystals.",
+    "dbfId": 113321
+  },
+  {
+    "name": "Nydus Worm",
+    "cost": 3,
+    "text": "Draw two Zerg cards. They cost (1) less.",
+    "dbfId": 113576
+  },
+  {
+    "name": "Ultralisk Cavern",
+    "cost": 3,
+    "health": 3,
+    "text": "[x]Deal 1 damage\nto all enemies.\n<b>Deathrattle:</b> Summon an\n8/8 Ultralisk with <b>Rush</b>.",
+    "dbfId": 113664
+  },
+  {
+    "name": "Consume",
+    "cost": 1,
+    "text": "[x]Remove 1 Durability\nfrom a friendly location\nto restore #8 Health to\nyour hero.",
+    "dbfId": 113667
+  },
+  {
+    "name": "Conflagrate",
+    "cost": 1,
+    "text": "Deal $5 damage to a minion. Its owner draws a card.",
+    "dbfId": 115753
+  },
+  {
+    "name": "Ancient of Yore",
+    "cost": 5,
+    "attack": 5,
+    "health": 5,
+    "text": "[x]<b>Dormant</b> for 2 turns.\nWhile <b>Dormant</b>, gain 5\nArmor and draw a card at\nthe end of your turn.",
+    "dbfId": 117302
+  },
+  {
+    "name": "Elise the Navigator",
+    "cost": 4,
+    "attack": 3,
+    "health": 5,
+    "text": "<b>Battlecry:</b> If your deck started with 10 cards of different Costs, craft a custom location.",
+    "dbfId": 117762
+  },
+  {
+    "name": "Cursed Catacombs",
+    "cost": 0,
+    "text": "<b>Discover</b> a minion\nfrom your deck.\nMake it <b>Temporary</b>.",
+    "dbfId": 117892
+  }
+]
