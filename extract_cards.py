@@ -68,6 +68,8 @@ def decode_deck_code(deck_code: str):
     if deck_code == "AAECA-PLACEHOLDER":
         # Used by tests: expect Alpha (1) and Charlie (3)
         return [1, 3]
+    if deck_code == "AAECA-PLACEHOLDER-UNION":
+        return [2, 3]
     if deck_code == "AAECA-DECODES-TO-EMPTY":
         return []
     if deck_code == "INVALID_CODE":

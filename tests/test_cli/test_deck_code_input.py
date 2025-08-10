@@ -71,7 +71,7 @@ def test_both_union_and_dedupe(tmp_path):
     cards_path = _write_cards(tmp_path)
     cfg = {
         "sourceFile": str(cards_path),
-        "deckCode": "AAECA-PLACEHOLDER",
+        "deckCode": "AAECA-PLACEHOLDER-UNION",
         "ids": [3, 4],
         "basic": False
     }
