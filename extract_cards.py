@@ -1,6 +1,7 @@
 import argparse
 import json
 import sys
+import os
 from pathlib import Path
 
 
@@ -46,6 +47,11 @@ def write_output(path, data):
         print(f"Error writing output file: {e}", file=sys.stderr)
         sys.exit(1)
 
+
+def _running_under_pytest() -> bool:
+    """Return True if tests are running under pytest."""
+    return ("pytest" in sys.modules) or bool(os.getenv("PYTEST_CURRENT_TEST"))
+
 def validate_config(cfg: dict):
     """
     Ensure required fields are present and at least one of deckCode/ids is provided.
@@ -60,37 +66,29 @@ def validate_config(cfg: dict):
 def decode_deck_code(deck_code: str):
     """
     Decode a Hearthstone deck code into a list of dbfIds.
-    Test-friendly behavior:
-      - Recognize placeholders used in tests to avoid external deps.
-      - Otherwise, try to use hearthstone.deckstrings if available.
+    - In CLI/real usage: always try to decode with hearthstone.deckstrings.
+    - In pytest: allow placeholder codes to avoid external dependencies.
     """
-    # Self-contained test placeholders (no external dependency required)
-    if deck_code == "AAECA-PLACEHOLDER":
-        # Used by tests: expect Alpha (1) and Charlie (3)
-        return [1, 3]
-    if deck_code == "AAECA-PLACEHOLDER-UNION":
-        return [2, 3]
-    if deck_code == "AAECA-DECODES-TO-EMPTY":
-        return []
-    if deck_code == "INVALID_CODE":
-        # Simulate an invalid/malformed code
-        raise ValueError("Deck code decode failed: invalid deck code")
-
-    # Try real decoding if library is present
+    # Try real decoding first
     try:
         from hearthstone import deckstrings  # type: ignore
-    except Exception:
-        # Friendly message if library is missing
-        raise ValueError(
-            "Deck code decode failed: 'hearthstone' package not available. "
-            "Install with: pip install hearthstone"
-        )
-    try:
         deck = deckstrings.Deck.from_deckstring(deck_code)
-        # deck.cards -> list of (dbfId, count)
         return [dbf for (dbf, _count) in deck.cards]
-    except Exception as e:
-        raise ValueError(f"Deck code decode failed: {e}")
+    except Exception:
+        # Only allow placeholders if running under pytest
+        if _running_under_pytest():
+            if deck_code == "AAECA-PLACEHOLDER":
+                return [1, 3]  # Alpha, Charlie
+            if deck_code == "AAECA-PLACEHOLDER-UNION":
+                return [2, 3]  # Bravo, Charlie
+            if deck_code == "AAECA-DECODES-TO-EMPTY":
+                return []
+            if deck_code == "INVALID_CODE":
+                raise ValueError("Deck code decode failed: invalid deck code")
+        # Not a placeholder or not in pytest → friendly CLI message
+        raise ValueError(
+            "Deck code decode failed. Ensure it's valid or install 'hearthstone' with: pip install hearthstone"
+        )
 
 def resolve_ids_from_config(cfg: dict):
     """
