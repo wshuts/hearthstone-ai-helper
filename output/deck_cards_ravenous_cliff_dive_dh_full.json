@@ -1,0 +1,581 @@
+[
+  {
+    "id": "CS3_020",
+    "dbfId": 66176,
+    "name": "Illidari Inquisitor",
+    "text": "<b>Rush</b>. After your hero attacks an enemy, this attacks it too.",
+    "set": "Core",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Minion",
+    "attack": 8,
+    "health": 8,
+    "collectible": true,
+    "cost": 8,
+    "race": "DEMON",
+    "races": [
+      "DEMON"
+    ],
+    "rarity": "Rare",
+    "mechanics": [
+      "RUSH",
+      "TRIGGER_VISUAL"
+    ],
+    "artist": "James Ryman",
+    "flavor": "Armed with fear, big eyes, ruthless efficiency, almost fanatical devotion to your hero, and nice brown robes.",
+    "audio2": {
+      "BASIC_play": {
+        "Play": {
+          "mainSounds": [
+            "CS3_020_IllidariInquisitor_Play.ogg"
+          ]
+        },
+        "Play_Felfire_Underlay_Play": {
+          "mainSounds": [
+            "Felfire_Underlay_Play.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "CS3_020_IllidariInquisitor_Attack.ogg"
+          ]
+        },
+        "Attack_Felfire_Underlay_Attack": {
+          "mainSounds": [
+            "Felfire_Underlay_Attack.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "CS3_020_IllidariInquisitor_Death.ogg"
+          ]
+        },
+        "Death_FelFire_Underlay_Death": {
+          "mainSounds": [
+            "FelFire_Underlay_Death.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "CORE_YOP_001",
+    "dbfId": 97377,
+    "name": "Illidari Studies",
+    "text": "<b>Discover</b> an <b>Outcast</b> card. Your next one costs (1) less.",
+    "set": "Core",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 1,
+    "rarity": "Common",
+    "counterpartCards": [
+      61939,
+      76269,
+      97377
+    ],
+    "mechanics": [
+      "DISCOVER"
+    ],
+    "referencedTags": [
+      "OUTCAST"
+    ],
+    "artist": "MAR Studio",
+    "flavor": "\"Don't read texts and drive.\"",
+    "audio2": {
+      "BASIC_play": {
+        "VO_HERO_10au_Female_Murloc_Trigger_IllidariStudies_01": {
+          "mainSounds": [
+            "VO_HERO_10au_Female_Murloc_Trigger_IllidariStudies_01.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "TOY_644",
+    "dbfId": 104515,
+    "name": "Red Card",
+    "text": "Make a minion go <b>Dormant</b> for 2 turns.",
+    "set": "Whizbangs_workshop",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 1,
+    "rarity": "Epic",
+    "referencedTags": [
+      "DORMANT"
+    ],
+    "artist": "Ramzy Kamen",
+    "flavor": "Finally, Demon Hunter has expanded its color palette to TWO colors!"
+  },
+  {
+    "id": "TOY_647",
+    "dbfId": 104521,
+    "name": "Magtheridon, Unreleased",
+    "text": "[x]<b>Dormant</b> for 2 turns.\nWhile <b>Dormant</b>, deal 3\ndamage to all enemies at\nthe end of your turn.",
+    "set": "Whizbangs_workshop",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Minion",
+    "attack": 12,
+    "health": 12,
+    "collectible": true,
+    "cost": 8,
+    "race": "DEMON",
+    "races": [
+      "DEMON",
+      "MECH"
+    ],
+    "rarity": "Legendary",
+    "mechanics": [
+      "END_OF_TURN",
+      "DEAL_DAMAGE"
+    ],
+    "referencedTags": [
+      "DORMANT"
+    ],
+    "artist": "L. Lullabi & K. Turovec",
+    "flavor": "Playing with this card can be penalized with up to a two-year suspension. Please wait until the card is officially released.",
+    "audio2": {
+      "BASIC_play": {
+        "TOY_647_MagtheridontheUnreleased_Stinger": {
+          "mainSounds": [
+            "TOY_647_MagtheridontheUnreleased_Stinger.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_TOY_647_PitLordDemon_Emote_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_TOY_647_PitLordDemon_Emote_Attack_01.ogg"
+          ]
+        },
+        "Felfire_Underlay_Attack": {
+          "mainSounds": [
+            "Felfire_Underlay_Attack.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_TOY_647_PitLordDemon_Emote_Death_01.ogg"
+          ]
+        },
+        "Felfire_Underlay_Death": {
+          "mainSounds": [
+            "Felfire_Underlay_Death.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "MIS_102",
+    "dbfId": 105514,
+    "name": "Return Policy",
+    "text": "<b>Discover</b> a friendly <b>Deathrattle</b> card you've played this game.\nTrigger its <b>Deathrattle</b>.",
+    "set": "Boom_Inventions",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Common",
+    "mechanics": [
+      "DISCOVER"
+    ],
+    "referencedTags": [
+      "DEATHRATTLE"
+    ],
+    "artist": "L. Lullabi & K. Turovec",
+    "flavor": "Sorry, the Workshop has a strict 'no-takesies-backsies' policy."
+  },
+  {
+    "id": "TOY_703",
+    "dbfId": 105522,
+    "name": "Colifero the Artist",
+    "text": "[x]<b>Battlecry:</b> Draw a minion.\nTransform all other friendly\nminions into copies of it.",
+    "set": "Whizbangs_workshop",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 6,
+    "health": 5,
+    "collectible": true,
+    "cost": 8,
+    "race": "ELEMENTAL",
+    "races": [
+      "ELEMENTAL"
+    ],
+    "rarity": "Legendary",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "artist": "Ramzy Kamen",
+    "flavor": "You are what you paint! And Colifero is paint.",
+    "audio2": {
+      "BASIC_play": {
+        "TOY_703_ColiferotheArtist_Stinger1": {
+          "mainSounds": [
+            "TOY_703_ColiferotheArtist_Stinger1.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_TOY_703_Elemental_Emote_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_TOY_703_Elemental_Emote_Attack_01.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_TOY_703_Elemental_Emote_Death_01.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "VAC_926",
+    "dbfId": 106583,
+    "name": "Cliff Dive",
+    "text": "[x]Summon 2 minions\nfrom your deck and give\nthem <b>Rush</b>. They go back\nat the end of your turn.",
+    "set": "Perils_in_paradise",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 7,
+    "rarity": "Epic",
+    "mechanics": [
+      "END_OF_TURN"
+    ],
+    "referencedTags": [
+      "RUSH"
+    ],
+    "artist": "Mooncolony",
+    "flavor": "\"Is it safe?\"\n\"Sure, we have plenty of replacement pirates.\""
+  },
+  {
+    "id": "VAC_929",
+    "dbfId": 106614,
+    "name": "Dangerous Cliffside",
+    "text": "[x]Summon two 1/1\nPirates with <b>Charge</b>.\nAfter your hero attacks,\nreopen this.",
+    "set": "Perils_in_paradise",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Location",
+    "health": 3,
+    "collectible": true,
+    "cost": 4,
+    "rarity": "Rare",
+    "referencedTags": [
+      "CHARGE"
+    ],
+    "artist": "BOSi Studio",
+    "relatedCardDbfIds": [
+      107830
+    ],
+    "flavor": "It's not as dangerous as it looks… IT'S EVEN MORE DANGEROUS!"
+  },
+  {
+    "id": "EDR_891",
+    "dbfId": 114497,
+    "name": "Ravenous Felhunter",
+    "text": "<b>Deathrattle:</b> Resurrect a friendly <b>Deathrattle</b> minion that costs (4) or less. Summon a copy of it.",
+    "set": "Into_the_emerald_dream",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Minion",
+    "attack": 5,
+    "health": 3,
+    "collectible": true,
+    "cost": 5,
+    "race": "DEMON",
+    "races": [
+      "DEMON"
+    ],
+    "rarity": "Rare",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "artist": "BOSi Studio",
+    "flavor": "Loves soul food.",
+    "audio2": {
+      "BASIC_play": {
+        "Play": {
+          "mainSounds": [
+            "Felhound_DAL_582t2_Play.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "Felhound_DAL_582t2_Attack.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "Felhound_DAL_582t2_Death.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "GDB_902",
+    "dbfId": 114513,
+    "name": "Infiltrate",
+    "text": "Choose a minion.\nDeal $3 damage to all other minions.",
+    "set": "Great_dark_beyond",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Common",
+    "mechanics": [
+      "DEAL_DAMAGE"
+    ],
+    "artist": "Kevin Sidharta",
+    "flavor": "Everybody get out of here! Except you. You can stay.",
+    "audio2": {
+      "BASIC_play": {
+        "VO_HERO_10aw_Female_InfestedHuman_Trigger_Infiltrate_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_Trigger_Infiltrate_01.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "id": "EDR_840",
+    "dbfId": 114654,
+    "name": "Grim Harvest",
+    "text": "Draw a card.\nSummon a random <b>Dormant</b> Dreadseed.",
+    "set": "Into_the_emerald_dream",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 2,
+    "rarity": "Common",
+    "referencedTags": [
+      "DORMANT"
+    ],
+    "artist": "Jason Kang",
+    "relatedCardDbfIds": [
+      114655,
+      114658,
+      114661
+    ],
+    "flavor": "\"Muahaha… This year's harvest was quite <i>grim</i>… just how I like it! Because I'm EVIL!\""
+  },
+  {
+    "id": "EDR_820",
+    "dbfId": 115198,
+    "name": "Wyvern's Slumber",
+    "text": "<b>Choose One -</b> Summon two <b>Dormant</b> Dreadseeds; or Deal $2 damage to all minions.",
+    "set": "Into_the_emerald_dream",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Epic",
+    "mechanics": [
+      "CHOOSE_ONE",
+      "DEAL_DAMAGE"
+    ],
+    "referencedTags": [
+      "DORMANT"
+    ],
+    "artist": "Sergey Tsvelykh",
+    "relatedCardDbfIds": [
+      114655,
+      114658,
+      114661,
+      115200,
+      115201
+    ],
+    "flavor": "But watch, as soon as you try to go to sleep it'll be running all around the house making a bunch of noise."
+  },
+  {
+    "id": "TLC_902",
+    "dbfId": 117686,
+    "name": "Infestation",
+    "text": "[x]Get two 1-Cost Gorishi\nStingers. Each one deals\n$2 damage and summons\na 2/1 Grub with <b>Rush</b>.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 2,
+    "rarity": "Rare",
+    "mechanics": [
+      "DEAL_DAMAGE"
+    ],
+    "referencedTags": [
+      "RUSH"
+    ],
+    "artist": "Tanamaes Leejierasaes",
+    "relatedCardDbfIds": [
+      117870,
+      117689
+    ],
+    "flavor": "NOT THE WASPS!"
+  },
+  {
+    "id": "TLC_833",
+    "dbfId": 117813,
+    "name": "Insect Claw",
+    "text": "After your hero attacks, summon a 2/1 Grub with <b>Rush</b>.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Weapon",
+    "attack": 2,
+    "collectible": true,
+    "cost": 3,
+    "durability": 2,
+    "rarity": "Rare",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "referencedTags": [
+      "RUSH"
+    ],
+    "artist": "Studio Hive",
+    "relatedCardDbfIds": [
+      117689
+    ],
+    "flavor": "Get your grubby claws off me!"
+  },
+  {
+    "id": "TLC_468",
+    "dbfId": 118279,
+    "name": "Blob of Tar",
+    "text": "[x]<b>Poisonous</b>, <b>Taunt</b>\n<b>Deathrattle:</b> Summon a 1/2\nBlob with <b>Poisonous</b> and a\n1/2 Blob with <b>Taunt</b>.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 2,
+    "health": 4,
+    "collectible": true,
+    "cost": 4,
+    "race": "ELEMENTAL",
+    "races": [
+      "ELEMENTAL"
+    ],
+    "faction": "NEUTRAL",
+    "rarity": "Common",
+    "mechanics": [
+      "DEATHRATTLE",
+      "POISONOUS",
+      "TAUNT"
+    ],
+    "artist": "Dmitry Bolotov",
+    "relatedCardDbfIds": [
+      118280,
+      118281
+    ],
+    "flavor": "A tar is born."
+  },
+  {
+    "id": "CORE_BAR_330",
+    "dbfId": 120785,
+    "name": "Tuskpiercer",
+    "text": "[x]<b>Deathrattle:</b> Draw a\n<b>Deathrattle</b> minion.",
+    "set": "Core",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Weapon",
+    "attack": 1,
+    "collectible": true,
+    "cost": 1,
+    "durability": 2,
+    "rarity": "Rare",
+    "counterpartCards": [
+      63229,
+      120785
+    ],
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "artist": "Kagi",
+    "flavor": "It's the Barrens, everything has tusks! The Quilboar have tusks, the boars have tusks, the tusks have tusks."
+  }
+]
