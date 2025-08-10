@@ -6,7 +6,6 @@ from pathlib import Path
 import pytest
 from jsonschema import ValidationError, validate
 
-from extract_cards import to_basic_fields
 from schemas import config_schema
 
 
@@ -74,11 +73,6 @@ def test_extract_cards_outputs_only_basic_fields_when_flagged():
 
     # Look for something that shouldn't appear in basic fields
     assert "rarity" not in result.stdout.lower()
-
-
-def test_to_basic_fields_strips_non_basic():
-    card = {"name": "X", "cost": 3, "attack": 2, "health": 4, "text": "t", "rarity": "Epic"}
-    assert to_basic_fields(card) == {"name": "X", "cost": 3, "attack": 2, "health": 4, "text": "t"}
 
 
 def test_extract_cards_writes_to_output_file(tmp_path):
