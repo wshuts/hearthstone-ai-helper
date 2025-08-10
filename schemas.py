@@ -4,6 +4,7 @@ config_schema = {
     "type": "object",
     "properties": {
         "sourceFile": {"type": "string"},
+        "deckCode": { "type": "string", "minLength": 5 },
         "ids": {
             "type": "array",
             "items": {"type": "integer"}
@@ -11,5 +12,9 @@ config_schema = {
         "basic": {"type": "boolean"},
         "outputFile": {"type": "string"}
     },
-    "required": ["sourceFile", "ids"]
+    "required": ["sourceFile"],
+    "anyOf": [
+        { "required": ["deckCode"] },
+        { "required": ["ids"] }
+    ]
 }
