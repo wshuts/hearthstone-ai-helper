@@ -100,6 +100,12 @@ def decode_deck_code_real(deck_code: str) -> list[int]:
             "Deck code decode failed. Ensure it's valid or install 'hearthstone' (pip install hearthstone)."
         ) from e
 
+# -- Deck decoder indirection -------------------------------------------------
+# Default decoder uses the real hearthstone library.
+# Tests may monkeypatch this symbol to a fake callable with signature (str) -> list[int].
+DECK_DECODER: DeckDecoder
+DECK_DECODER = lambda s: decode_deck_code_real(s)
+
 def resolve_ids_from_config(cfg: dict, deck_decoder: DeckDecoder) -> list[int]:
     """
     Merge ids from deckCode (if present) and ids list (if present).
@@ -138,7 +144,7 @@ def main(argv: list[str] | None = None) -> int:
 
         cards = load_cards(source_file)
         # Resolve final id set from deckCode and/or ids
-        ids_to_extract = resolve_ids_from_config(raw_cfg, decode_deck_code_real)
+        ids_to_extract = resolve_ids_from_config(raw_cfg, DECK_DECODER)
         filtered = filter_cards_by_id(cards, ids_to_extract)
         if basic:
             filtered = [to_basic_fields(c) for c in filtered]
