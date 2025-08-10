@@ -82,9 +82,9 @@ def validate_config(cfg: dict) -> None:
     Ensure required fields are present and at least one of deckCode/ids is provided.
     """
     if "sourceFile" not in cfg:
-        raise ConfigError("Missing required field 'sourceFile'.")
+        raise ConfigError("missing required field 'sourceFile'.")
     if not cfg.get("deckCode") and not cfg.get("ids"):
-        raise ConfigError("Provide 'deckCode' or 'ids'.")
+        raise ConfigError("provide 'deckCode' or 'ids'.")
 
 
 def decode_deck_code_real(deck_code: str) -> list[int]:
@@ -107,7 +107,11 @@ def resolve_ids_from_config(cfg: dict, deck_decoder: DeckDecoder) -> list[int]:
     """
     ids: set[int] = set()
     if cfg.get("deckCode"):
-        ids.update(deck_decoder(cfg["deckCode"]))
+        try:
+            ids.update(deck_decoder(cfg["deckCode"]))
+        except DeckCodeError:
+            # Non-fatal: continue to allow ids[] to resolve; final emptiness is handled below.
+            pass
     if cfg.get("ids") is not None:
         try:
             ids.update(int(x) for x in cfg.get("ids", []))
@@ -142,6 +146,7 @@ def main(argv: list[str] | None = None) -> int:
         if output_file:
             write_output(output_file, filtered)
         else:
+            print(f"Loaded {len(filtered)} cards")
             print(json.dumps(filtered, indent=2))
         return 0
     except (ConfigError, DeckCodeError, DataError, IOErrorEx) as e:
