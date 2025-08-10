@@ -1,7 +1,8 @@
 import json
-import subprocess
-import sys
 from pathlib import Path
+from types import SimpleNamespace
+
+import extract_cards as ec
 
 """
 RED PHASE TESTS
@@ -27,15 +28,13 @@ def _write_cards(tmp_path: Path):
     return cards_path
 
 
-def _run_cli_with_config(cfg_path: Path):
-    return subprocess.run(
-        [sys.executable, "extract_cards.py", "--config", str(cfg_path)],
-        capture_output=True,
-        text=True
-    )
+def _run_cli_with_config(cfg_path: Path, capsys):
+    rc = ec.main(['--config', str(cfg_path)])
+    cap = capsys.readouterr()
+    return SimpleNamespace(returncode=rc, stdout=cap.out, stderr=cap.err)
 
 
-def test_deck_code_only_success(tmp_path):
+def test_deck_code_only_success(capsys, monkeypatch, tmp_path):
     """
     New behavior: deckCode-only configs should succeed by decoding to dbfIds.
     Expect output to include the decoded cards (e.g., dbfIds [1, 3] -> Alpha, Charlie).
@@ -52,7 +51,8 @@ def test_deck_code_only_success(tmp_path):
     cfg_path = tmp_path / "cfg_deckcode_only.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
+    monkeypatch.setattr(ec, "DECK_DECODER", lambda _: [114340, 122318])
+    proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN behavior expectation:
     # - returncode == 0
@@ -62,7 +62,7 @@ def test_deck_code_only_success(tmp_path):
     assert "Alpha" in out and "Charlie" in out
 
 
-def test_both_union_and_dedupe(tmp_path):
+def test_both_union_and_dedupe(tmp_path, capsys):
     """
     New behavior: deckCode + ids are merged (union, deduped).
     Example: deckCode -> [2,3], ids -> [3,4] => final {2,3,4}.
@@ -78,7 +78,7 @@ def test_both_union_and_dedupe(tmp_path):
     cfg_path = tmp_path / "cfg_both_union.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
+    proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN expectation:
     assert proc.returncode == 0, proc.stderr
@@ -86,7 +86,7 @@ def test_both_union_and_dedupe(tmp_path):
     assert "Bravo" in out and "Charlie" in out and "Delta" in out
 
 
-def test_neither_fields_errors(tmp_path):
+def test_neither_fields_errors(tmp_path, capsys):
     """
     New behavior: if neither deckCode nor ids are provided, exit with error.
     """
@@ -99,14 +99,14 @@ def test_neither_fields_errors(tmp_path):
     cfg_path = tmp_path / "cfg_neither.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
+    proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN expectation:
     assert proc.returncode != 0
     assert "provide 'deckCode' or 'ids'" in (proc.stderr or proc.stdout)
 
 
-def test_bad_deck_code_errors(tmp_path):
+def test_bad_deck_code_errors(tmp_path, capsys):
     """
     New behavior: invalid deckCode should produce a friendly error.
     """
@@ -119,7 +119,7 @@ def test_bad_deck_code_errors(tmp_path):
     cfg_path = tmp_path / "cfg_bad_code.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
+    proc = _run_cli_with_config(cfg_path, capsys)
 
     # GREEN expectation:
     assert proc.returncode != 0
@@ -128,7 +128,7 @@ def test_bad_deck_code_errors(tmp_path):
     assert "Deck code decode failed" in combined
 
 
-def test_empty_union_errors(tmp_path):
+def test_empty_union_errors(tmp_path, capsys):
     """
     New behavior: if deckCode decodes to empty AND ids is empty -> error.
     Since we cannot patch subprocess here, we simulate by providing ids=[] and
@@ -144,7 +144,7 @@ def test_empty_union_errors(tmp_path):
     cfg_path = tmp_path / "cfg_empty_union.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
+    proc = _run_cli_with_config(cfg_path,capsys)
 
     # GREEN expectation:
     assert proc.returncode != 0
