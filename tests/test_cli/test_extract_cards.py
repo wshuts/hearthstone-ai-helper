@@ -12,7 +12,7 @@ from schemas import config_schema
 
 # ✅ Reusable loader
 def load_config(filename):
-    path = Path("test_data") / filename
+    path = Path("tests/test_data") / filename
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -35,7 +35,7 @@ def test_invalid_type():
 
 def test_extract_cards_succeeds_with_valid_config():
     result = subprocess.run(
-        ["python", "extract_cards.py", "--config", "test_data/valid_config.json"],
+        ["python", "extract_cards.py", "--config", "tests/test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -45,7 +45,7 @@ def test_extract_cards_succeeds_with_valid_config():
 
 def test_extract_cards_loads_source_file():
     result = subprocess.run(
-        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "tests/test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -55,7 +55,7 @@ def test_extract_cards_loads_source_file():
 
 def test_extract_cards_filters_by_ids():
     result = subprocess.run(
-        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "tests/test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
@@ -66,7 +66,7 @@ def test_extract_cards_filters_by_ids():
 
 def test_extract_cards_outputs_only_basic_fields_when_flagged():
     result = subprocess.run(
-        [sys.executable, "extract_cards.py", "--config", "test_data/valid_config.json"],
+        [sys.executable, "extract_cards.py", "--config", "tests/test_data/valid_config.json"],
         capture_output=True,
         text=True
     )
