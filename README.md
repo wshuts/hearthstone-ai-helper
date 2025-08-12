@@ -55,4 +55,9 @@ python extract_cards.py --config config.json > output/cards.json
 - **Full Entry** – Complete card data from the source file
 
 ## Requirements
-- Python 3.8+
+- Tested on Python 3.13.5
+- Standard Hearthstone card JSON file (not included)
+- `hearthstone` Python library for deck code decoding
+
+## License
+MIT License
