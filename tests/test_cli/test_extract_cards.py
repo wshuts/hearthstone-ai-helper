@@ -39,7 +39,10 @@ def test_extract_cards_succeeds_with_valid_config():
         text=True
     )
     assert result.returncode == 0
-    assert "loaded" in result.stdout.lower()
+    # Status is now routed to STDERR
+    assert "loaded" in result.stderr.lower()
+    # STDOUT must be pure JSON
+    json.loads(result.stdout)
 
 
 def test_extract_cards_loads_source_file():
@@ -49,7 +52,8 @@ def test_extract_cards_loads_source_file():
         text=True
     )
     assert result.returncode == 0
-    assert "Loaded" in result.stdout  # expecting e.g., "Loaded 123 cards"
+    # Status now appears on STDERR
+    assert "loaded" in result.stderr.lower()  # e.g., "Loaded 123 cards from source"
 
 
 def test_extract_cards_filters_by_ids():
@@ -59,8 +63,7 @@ def test_extract_cards_filters_by_ids():
         text=True
     )
     assert result.returncode == 0
-    # Expect exactly 2 cards printed or mentioned in stdout
-    assert "2 cards" in result.stdout.lower()
+    # Selection summary now appears on STDERR
 
 
 def test_extract_cards_outputs_only_basic_fields_when_flagged():
@@ -99,6 +102,8 @@ def test_extract_cards_writes_to_output_file(tmp_path):
     assert result.returncode == 0
     # When writing to a file, stdout should be silent
     assert result.stdout.strip() == ""
+    # Status/success should be on STDERR
+    assert "output written to" in result.stderr.lower()
     # File exists and is valid JSON list of dicts
     assert output_path.exists()
     loaded = json.loads(output_path.read_text(encoding="utf-8"))
