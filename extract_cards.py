@@ -26,6 +26,12 @@ class IOErrorEx(Exception):
     pass
 
 
+def _eprint(msg: str) -> None:
+    """Route status/progress to STDERR (never pollute STDOUT JSON)."""
+    import sys as _sys
+    print(msg, file=_sys.stderr, flush=True)
+
+
 @dataclass(frozen=True)
 class Config:
     source_file: Path
@@ -48,6 +54,9 @@ def load_cards(source_file: str | Path) -> list[dict]:
         raise IOErrorEx(f"Error loading source file: {e}") from e
     if not isinstance(data, list):
         raise DataError("Source JSON must be a list of card objects.")
+    # Status/progress to STDERR to keep STDOUT clean for JSON redirection
+    _eprint(f"Loaded {len(data)} cards from source")
+
     return data
 
 
@@ -151,9 +160,11 @@ def main(argv: list[str] | None = None) -> int:
 
         if output_file:
             write_output(output_file, filtered)
+            _eprint(f"Output written to {output_file}")
         else:
-            print(f"Loaded {len(filtered)} cards")
-            print(json.dumps(filtered, indent=2))
+            # Emit JSON ONLY to STDOUT (supports shell redirection cleanly)
+            sys.stdout.write(json.dumps(filtered, ensure_ascii=False, indent=2))
+            sys.stdout.flush()
         return 0
     except (ConfigError, DeckCodeError, DataError, IOErrorEx) as e:
         print(str(e), file=sys.stderr)
