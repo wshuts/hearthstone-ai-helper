@@ -1,0 +1,168 @@
+[
+  {
+    "name": "Chillfallen Baron",
+    "cost": 3,
+    "attack": 2,
+    "health": 2,
+    "text": "<b>Battlecry and Deathrattle:</b> Draw a card.",
+    "dbfId": 80647,
+    "countFromDeck": 2,
+    "displayName": "Chillfallen Baron ×2"
+  },
+  {
+    "name": "Glacial Shard",
+    "cost": 1,
+    "attack": 2,
+    "health": 1,
+    "text": "<b>Battlecry:</b> <b>Freeze</b> an enemy.",
+    "dbfId": 102227,
+    "countFromDeck": 2,
+    "displayName": "Glacial Shard ×2"
+  },
+  {
+    "name": "Threads of Despair",
+    "cost": 3,
+    "text": "Give all minions\n\"<b>Deathrattle:</b> Deal 1\ndamage to all minions.\"",
+    "dbfId": 104635,
+    "countFromDeck": 2,
+    "displayName": "Threads of Despair ×2"
+  },
+  {
+    "name": "Floppy Hydra",
+    "cost": 3,
+    "attack": 2,
+    "health": 4,
+    "text": "[x]<b>Deathrattle:</b> Shuffle a copy\nof this into your deck with\npermanently doubled\nAttack and Health.",
+    "dbfId": 105495,
+    "countFromDeck": 1,
+    "displayName": "Floppy Hydra ×1"
+  },
+  {
+    "name": "Helm of Humiliation",
+    "cost": 4,
+    "text": "Give a minion -5/-5. Give a minion in your hand +5/+5.",
+    "dbfId": 105511,
+    "countFromDeck": 1,
+    "displayName": "Helm of Humiliation ×1"
+  },
+  {
+    "name": "Dreadhound Handler",
+    "cost": 2,
+    "attack": 2,
+    "health": 1,
+    "text": "[x]<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1\nDreadhound with <b>Reborn</b>.",
+    "dbfId": 105855,
+    "countFromDeck": 2,
+    "displayName": "Dreadhound Handler ×2"
+  },
+  {
+    "name": "Adaptive Amalgam",
+    "cost": 1,
+    "attack": 1,
+    "health": 2,
+    "text": "[x]<i>This has all minion types.</i>\n<b>Deathrattle:</b> Shuffle this\ninto your deck. It keeps\nany enchantments.",
+    "dbfId": 108950,
+    "countFromDeck": 1,
+    "displayName": "Adaptive Amalgam ×1"
+  },
+  {
+    "name": "Vampiric Blood",
+    "cost": 2,
+    "text": "[x]Give your hero +5 Health.\nSpend 3 <b>Corpses</b> to gain\n5 more and draw a card.",
+    "dbfId": 111327,
+    "countFromDeck": 2,
+    "displayName": "Vampiric Blood ×2"
+  },
+  {
+    "name": "Braingill",
+    "cost": 3,
+    "attack": 3,
+    "health": 2,
+    "text": "<b>Battlecry:</b> Give your other Murlocs \"<b>Deathrattle:</b> Draw a card.\"",
+    "dbfId": 111415,
+    "countFromDeck": 1,
+    "displayName": "Braingill ×1"
+  },
+  {
+    "name": "Orbital Moon",
+    "cost": 1,
+    "text": "Give a minion <b>Taunt</b> and <b>Lifesteal</b>. If you played an adjacent card this turn, also give it <b>Reborn</b>.",
+    "dbfId": 111969,
+    "countFromDeck": 2,
+    "displayName": "Orbital Moon ×2"
+  },
+  {
+    "name": "Infested Breath",
+    "cost": 2,
+    "text": "Deal $2 damage. Summon a 0/2 Leech.",
+    "dbfId": 114305,
+    "countFromDeck": 2,
+    "displayName": "Infested Breath ×2"
+  },
+  {
+    "name": "Sanguine Infestation",
+    "cost": 4,
+    "text": "Draw 2 cards.\nSummon two 0/2 Leeches.",
+    "dbfId": 114966,
+    "countFromDeck": 2,
+    "displayName": "Sanguine Infestation ×2"
+  },
+  {
+    "name": "Ancient of Yore",
+    "cost": 5,
+    "attack": 5,
+    "health": 5,
+    "text": "[x]<b>Dormant</b> for 2 turns.\nWhile <b>Dormant</b>, gain 5\nArmor and draw a card at\nthe end of your turn.",
+    "dbfId": 117302,
+    "countFromDeck": 2,
+    "displayName": "Ancient of Yore ×2"
+  },
+  {
+    "name": "Poison Breath",
+    "cost": 2,
+    "text": "Give a friendly\nUndead <b>Poisonous</b>.",
+    "dbfId": 117308,
+    "countFromDeck": 2,
+    "displayName": "Poison Breath ×2"
+  },
+  {
+    "name": "Reanimated Pterrordax",
+    "cost": 5,
+    "attack": 4,
+    "health": 3,
+    "text": "<b><b>Rush</b>, Lifesteal</b>\nCosts <b>Corpses</b> instead\nof Mana.",
+    "dbfId": 117434,
+    "countFromDeck": 2,
+    "displayName": "Reanimated Pterrordax ×2"
+  },
+  {
+    "name": "Dissolving Ooze",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Battlecry:</b> Destroy a\nfriendly minion. Spit out\nthe Bones of its Attack and\nHealth into your hand.",
+    "dbfId": 118252,
+    "countFromDeck": 1,
+    "displayName": "Dissolving Ooze ×1"
+  },
+  {
+    "name": "The Curator",
+    "cost": 5,
+    "attack": 4,
+    "health": 6,
+    "text": "<b>Taunt</b>\n<b>Battlecry:</b> Draw a Beast, Dragon, and Murloc from your deck.",
+    "dbfId": 120180,
+    "countFromDeck": 1,
+    "displayName": "The Curator ×1"
+  },
+  {
+    "name": "Prize Vendor",
+    "cost": 2,
+    "attack": 2,
+    "health": 3,
+    "text": "<b>Battlecry and Deathrattle:</b> Each player draws a card.",
+    "dbfId": 120429,
+    "countFromDeck": 2,
+    "displayName": "Prize Vendor ×2"
+  }
+]
