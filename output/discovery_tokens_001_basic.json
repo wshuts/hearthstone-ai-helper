@@ -4,14 +4,7 @@
     "cost": 5,
     "attack": 3,
     "text": "After attacking a minion, your hero may attack again.",
-    "dbfId": 61476
-  },
-  {
-    "name": "Aldrachi Warblades",
-    "cost": 3,
-    "attack": 2,
-    "text": "<b>Lifesteal</b>",
-    "dbfId": 69507
+    "dbfId": 102334
   },
   {
     "name": "Ci'Cigi",
@@ -20,5 +13,12 @@
     "health": 4,
     "text": "[x]<b>Battlecry, Outcast, and\nDeathrattle:</b> Get a random\n first-edition Demon Hunter \ncard <i>(in mint condition)</i>.",
     "dbfId": 103169
+  },
+  {
+    "name": "Aldrachi Warblades",
+    "cost": 3,
+    "attack": 2,
+    "text": "<b>Lifesteal</b>",
+    "dbfId": 103174
   }
 ]

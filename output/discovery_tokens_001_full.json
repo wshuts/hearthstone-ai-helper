@@ -1,46 +1,25 @@
 [
   {
-    "id": "TB_HunterPrince_01",
-    "dbfId": 61476,
+    "id": "TOY_400t7",
+    "dbfId": 102334,
     "name": "Warglaives of Azzinoth",
     "text": "After attacking a minion, your hero may attack again.",
-    "set": "Tb",
-    "cardClass": "NEUTRAL",
-    "playerClass": "Neutral",
-    "classes": [
-      "NEUTRAL"
-    ],
-    "type": "Weapon",
-    "attack": 3,
-    "cost": 5,
-    "durability": 4
-  },
-  {
-    "id": "CORE_BT_921",
-    "dbfId": 69507,
-    "name": "Aldrachi Warblades",
-    "text": "<b>Lifesteal</b>",
-    "set": "Core",
+    "set": "Black_temple",
     "cardClass": "DEMONHUNTER",
     "playerClass": "Demonhunter",
     "classes": [
       "DEMONHUNTER"
     ],
     "type": "Weapon",
-    "attack": 2,
-    "collectible": true,
-    "cost": 3,
-    "durability": 2,
-    "rarity": "Common",
-    "counterpartCards": [
-      56583,
-      69507
-    ],
+    "attack": 3,
+    "cost": 5,
+    "durability": 4,
+    "rarity": "Epic",
     "mechanics": [
-      "LIFESTEAL"
+      "TRIGGER_VISUAL"
     ],
-    "artist": "J. Axer",
-    "flavor": "The ancient Aldrachi were the greatest warriors in the universe. Imagine their power if they'd put the handle at the END of the blade."
+    "artist": "SARIYA",
+    "flavor": "The blades glow green from things unseen, dark dreams whirling in the felfire gleam."
   },
   {
     "id": "TOY_913",
@@ -108,5 +87,27 @@
         }
       }
     }
+  },
+  {
+    "id": "TOY_913t1",
+    "dbfId": 103174,
+    "name": "Aldrachi Warblades",
+    "text": "<b>Lifesteal</b>",
+    "set": "Legacy",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Weapon",
+    "attack": 2,
+    "cost": 3,
+    "durability": 3,
+    "rarity": "Free",
+    "mechanics": [
+      "LIFESTEAL"
+    ],
+    "artist": "J. Axer",
+    "flavor": "The ancient Aldrachi were the greatest warriors in the universe. Imagine their power if they'd put the handle at the END of the blade."
   }
 ]
