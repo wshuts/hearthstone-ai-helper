@@ -1,6 +1,6 @@
 {
-  "sourceFile": "data/standard_cards_aug_2025.json",
-  "ids": [103169],
+  "sourceFile": "data/cards_all_enUS.json",
+  "ids": [103169, 69507, 61476],
   "basic": true,
   "outputFile": "output/discovery_tokens_001_basic.json"
 }
