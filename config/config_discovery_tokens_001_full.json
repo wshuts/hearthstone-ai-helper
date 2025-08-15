@@ -1,5 +1,5 @@
 {
   "sourceFile": "data/cards_all_enUS.json",
-  "ids": [103169, 103174, 102334],
+  "ids": [103169, 103174, 102334, 102330],
   "outputFile": "output/discovery_tokens_001_full.json"
 }

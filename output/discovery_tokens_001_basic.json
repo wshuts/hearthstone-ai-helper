@@ -1,5 +1,13 @@
 [
   {
+    "name": "Priestess of Fury",
+    "cost": 7,
+    "attack": 6,
+    "health": 7,
+    "text": "At the end of your turn, deal 6 damage randomly split among all enemies.",
+    "dbfId": 102330
+  },
+  {
     "name": "Warglaives of Azzinoth",
     "cost": 5,
     "attack": 3,

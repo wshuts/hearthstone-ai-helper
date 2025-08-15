@@ -1,5 +1,56 @@
 [
   {
+    "id": "TOY_400t5",
+    "dbfId": 102330,
+    "name": "Priestess of Fury",
+    "text": "At the end of your turn, deal 6 damage randomly split among all enemies.",
+    "set": "Black_temple",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Minion",
+    "attack": 6,
+    "health": 7,
+    "cost": 7,
+    "race": "DEMON",
+    "races": [
+      "DEMON"
+    ],
+    "rarity": "Rare",
+    "mechanics": [
+      "TRIGGER_VISUAL",
+      "END_OF_TURN",
+      "DEAL_DAMAGE"
+    ],
+    "artist": "Bayard Wu",
+    "flavor": "Furious that she only has six warglaives. The Sightless Watcher has eight! The fel is always greener on the other side.",
+    "audio2": {
+      "BASIC_play": {
+        "Play": {
+          "mainSounds": [
+            "VO_BT_493_Female_Shivarra_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_BT_493_Female_Shivarra_Attack_01.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_BT_493_Female_Shivarra_Death_01.ogg"
+          ]
+        }
+      }
+    }
+  },
+  {
     "id": "TOY_400t7",
     "dbfId": 102334,
     "name": "Warglaives of Azzinoth",
