@@ -1,0 +1,112 @@
+[
+  {
+    "id": "TB_HunterPrince_01",
+    "dbfId": 61476,
+    "name": "Warglaives of Azzinoth",
+    "text": "After attacking a minion, your hero may attack again.",
+    "set": "Tb",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Weapon",
+    "attack": 3,
+    "cost": 5,
+    "durability": 4
+  },
+  {
+    "id": "CORE_BT_921",
+    "dbfId": 69507,
+    "name": "Aldrachi Warblades",
+    "text": "<b>Lifesteal</b>",
+    "set": "Core",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Weapon",
+    "attack": 2,
+    "collectible": true,
+    "cost": 3,
+    "durability": 2,
+    "rarity": "Common",
+    "counterpartCards": [
+      56583,
+      69507
+    ],
+    "mechanics": [
+      "LIFESTEAL"
+    ],
+    "artist": "J. Axer",
+    "flavor": "The ancient Aldrachi were the greatest warriors in the universe. Imagine their power if they'd put the handle at the END of the blade."
+  },
+  {
+    "id": "TOY_913",
+    "dbfId": 103169,
+    "name": "Ci'Cigi",
+    "text": "[x]<b>Battlecry, Outcast, and\nDeathrattle:</b> Get a random\n first-edition Demon Hunter \ncard <i>(in mint condition)</i>.",
+    "set": "Whizbangs_workshop",
+    "cardClass": "DEMONHUNTER",
+    "playerClass": "Demonhunter",
+    "classes": [
+      "DEMONHUNTER"
+    ],
+    "type": "Minion",
+    "attack": 4,
+    "health": 4,
+    "collectible": true,
+    "cost": 4,
+    "rarity": "Legendary",
+    "mechanics": [
+      "BATTLECRY",
+      "DEATHRATTLE",
+      "OUTCAST"
+    ],
+    "artist": "Arthur Bozonnet",
+    "availableAsSignature": true,
+    "relatedCardDbfIds": [
+      102323,
+      103175,
+      103174,
+      102321,
+      102335,
+      103176,
+      102327,
+      102331,
+      102322,
+      102334,
+      102330
+    ],
+    "flavor": "She once bought a 1of1 Golden Skull of Gul'dan written entirely in Thalassian for 2,000,000 Gold.",
+    "audio2": {
+      "BASIC_play": {
+        "TOY_913_CiCigi_Stinger": {
+          "mainSounds": [
+            "TOY_913_CiCigi_Stinger.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_TOY_913_Sporeling_Emote_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_TOY_913_Sporeling_Emote_Attack_01.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_TOY_913_Sporeling_Emote_Death_01.ogg"
+          ]
+        }
+      }
+    }
+  }
+]
