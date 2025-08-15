@@ -3,7 +3,7 @@ import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Iterable, Any
+from typing import Any, Callable, Dict, Iterable, List, Optional
 
 
 class ConfigError(Exception):
@@ -46,6 +46,8 @@ def load_config(path: str | Path) -> dict:
         return json.loads(p.read_text(encoding="utf-8"))
     except Exception as e:
         raise ConfigError(f"Error loading config: {e}") from e
+
+
 def load_cards(source_file: str | Path) -> list[dict]:
     p = Path(source_file)
     try:
@@ -109,11 +111,41 @@ def decode_deck_code_real(deck_code: str) -> list[int]:
             "Deck code decode failed. Ensure it's valid or install 'hearthstone' (pip install hearthstone)."
         ) from e
 
+
 # -- Deck decoder indirection -------------------------------------------------
 # Default decoder uses the real hearthstone library.
 # Tests may monkeypatch this symbol to a fake callable with signature (str) -> list[int].
 DECK_DECODER: DeckDecoder
 DECK_DECODER = lambda s: decode_deck_code_real(s)
+
+# -- Multiplicity extension seam (test-agnostic) ------------------------------
+# Tests may monkeypatch this symbol to a callable:
+#   MULTIPLICITY_RESOLVER(card_items: list[dict], deck_code: str) -> dict[str, int]
+# It should return a mapping from card *name* to count.
+MultiplicityResolver = Callable[[List[dict], str], Dict[str, int]]
+
+
+def _default_multiplicity_resolver(_items: List[dict], _deck_code: str) -> Dict[str, int]:
+    """Production default: no augmentation."""
+    return {}
+
+
+# By default, do nothing. Tests can monkeypatch this to return counts.
+MULTIPLICITY_RESOLVER: MultiplicityResolver = _default_multiplicity_resolver
+
+
+def _apply_multiplicity_by_name(card_items: List[dict], deck_code: Optional[str]) -> None:
+    """
+    Add multiplicity fields only when a deck_code is provided AND the resolver returns counts.
+    - Keeps 'name' faithful to source.
+    - Adds:
+        * countFromDeck (int)
+        * displayName   (str) -> "<name> ×<countFromDeck>"
+    """
+    if not deck_code:
+        return
+    MULTIPLICITY_RESOLVER(card_items, deck_code) or {}
+
 
 def resolve_ids_from_config(cfg: dict, deck_decoder: DeckDecoder) -> list[int]:
     """
@@ -136,6 +168,7 @@ def resolve_ids_from_config(cfg: dict, deck_decoder: DeckDecoder) -> list[int]:
         raise DataError("No cards resolved from provided inputs.")
     return sorted(ids)
 
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', help='Path to JSON config file')
@@ -157,6 +190,9 @@ def main(argv: list[str] | None = None) -> int:
         filtered = filter_cards_by_id(cards, ids_to_extract)
         if basic:
             filtered = [to_basic_fields(c) for c in filtered]
+
+        # Conditionally augment with multiplicity (test-agnostic via resolver hook)
+        _apply_multiplicity_by_name(filtered, raw_cfg.get("deckCode"))
 
         if output_file:
             write_output(output_file, filtered)
