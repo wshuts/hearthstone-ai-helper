@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
+import extract_cards as ec
 
 
 # ----------------------------
@@ -78,7 +79,7 @@ def _expect_display_name(name: str, count: int) -> str:
 # RED Test 1: Behavior with deckCode (format + values)
 # ----------------------------------------------------
 
-def test_multiplicity_behavior_with_deckcode(tmp_path: Path):
+def test_multiplicity_behavior_with_deckcode(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     """
     Given a deckCode, each output entry must include:
       - countFromDeck (int) with the expected value per card
@@ -93,6 +94,9 @@ def test_multiplicity_behavior_with_deckcode(tmp_path: Path):
     src = _write_min_source(tmp_path)
     out_file = tmp_path / "out_behavior.json"
 
+    # Provide deterministic counts via resolver (in-process monkeypatch)
+    monkeypatch.setattr(ec, "MULTIPLICITY_RESOLVER", lambda _items, _deck: {"Alpha": 2, "Beta": 1})
+
     # ids match the minimal source; deckCode is a placeholder for RED
     cfg = {
         "sourceFile": str(src),
@@ -104,11 +108,8 @@ def test_multiplicity_behavior_with_deckcode(tmp_path: Path):
     cfg_path = tmp_path / "config_behavior.json"
     cfg_path.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    proc = _run_cli_with_config(cfg_path)
-    assert proc.returncode == 0, (
-        "CLI crashed unexpectedly; RED should fail on missing fields/format, not process errors.\n"
-        f"STDERR:\n{proc.stderr}"
-    )
+    exit_code = ec.main(["--config", str(cfg_path)])
+    assert exit_code == 0, "Program should run; RED should fail on missing fields/format, not on process errors."
 
     cards = _read_output_list(out_file)
     assert cards, "Expected non-empty output list."
@@ -152,7 +153,7 @@ def test_multiplicity_behavior_with_deckcode(tmp_path: Path):
 # RED Test 2: Triggering (with deckCode vs without deckCode)
 # ------------------------------------------------------------
 
-def test_multiplicity_triggers_only_with_deckcode(tmp_path: Path):
+def test_multiplicity_triggers_only_with_deckcode(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     """
     Verify the feature gate:
       - WITHOUT deckCode: no 'countFromDeck' / 'displayName' on any entry
@@ -161,6 +162,9 @@ def test_multiplicity_triggers_only_with_deckcode(tmp_path: Path):
     Current implementation is expected to FAIL (RED) on the WITH deckCode case.
     """
     src = _write_min_source(tmp_path)
+
+    # Deterministic counts when deckCode is present
+    monkeypatch.setattr(ec, "MULTIPLICITY_RESOLVER", lambda _items, _deck: {"Alpha": 2, "Beta": 1})
 
     # --- Case A: WITHOUT deckCode ---
     out_no = tmp_path / "out_no_deckcode.json"
@@ -173,8 +177,8 @@ def test_multiplicity_triggers_only_with_deckcode(tmp_path: Path):
     (tmp_path / "config_no_deckcode.json").write_text(
         json.dumps(cfg_no, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    proc_no = _run_cli_with_config(tmp_path / "config_no_deckcode.json")
-    assert proc_no.returncode == 0, f"CLI failed unexpectedly.\nSTDERR:\n{proc_no.stderr}"
+    exit_no = ec.main(["--config", str(tmp_path / "config_no_deckcode.json")])
+    assert exit_no == 0, "Program should run without deckCode."
     cards_no = _read_output_list(out_no)
     assert cards_no, "Expected non-empty list without deckCode."
     for e in cards_no:
@@ -194,11 +198,8 @@ def test_multiplicity_triggers_only_with_deckcode(tmp_path: Path):
     (tmp_path / "config_with_deckcode.json").write_text(
         json.dumps(cfg_yes, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    proc_yes = _run_cli_with_config(tmp_path / "config_with_deckcode.json")
-    assert proc_yes.returncode == 0, (
-        "CLI crashed unexpectedly; RED should fail on missing fields, not process errors.\n"
-        f"STDERR:\n{proc_yes.stderr}"
-    )
+    exit_yes = ec.main(["--config", str(tmp_path / "config_with_deckcode.json")])
+    assert exit_yes == 0, "Program should run with deckCode."
     cards_yes = _read_output_list(out_yes)
     assert cards_yes, "Expected non-empty list with deckCode."
     for e in cards_yes:
