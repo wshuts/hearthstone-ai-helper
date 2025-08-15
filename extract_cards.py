@@ -4,6 +4,7 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Optional
+from collections import Counter
 
 
 class ConfigError(Exception):
@@ -101,11 +102,19 @@ def validate_config(cfg: dict) -> None:
 def decode_deck_code_real(deck_code: str) -> list[int]:
     """
     Decode a Hearthstone deck code into a list of dbfIds using hearthstone.deckstrings.
+    The returned list contains one entry per copy (e.g., a 2x card appears twice).
     """
     try:
         from hearthstone import deckstrings  # type: ignore
         deck = deckstrings.Deck.from_deckstring(deck_code)
-        return [dbf for (dbf, _count) in deck.cards]
+        result: list[int] = []
+        for dbf, count in deck.cards:
+            try:
+                c = int(count)
+            except (TypeError, ValueError):
+                c = 1
+            result.extend([dbf] * c)
+        return result
     except Exception as e:
         raise DeckCodeError(
             "Deck code decode failed. Ensure it's valid or install 'hearthstone' (pip install hearthstone)."
@@ -125,9 +134,33 @@ DECK_DECODER = lambda s: decode_deck_code_real(s)
 MultiplicityResolver = Callable[[List[dict], str], Dict[str, int]]
 
 
-def _default_multiplicity_resolver(_items: List[dict], _deck_code: str) -> Dict[str, int]:
-    """Production default: no augmentation."""
-    return {}
+def _default_multiplicity_resolver(items: List[dict], deck_code: str) -> Dict[str, int]:
+    """
+    Production SPIKE implementation:
+    - Decode deck_code -> list of dbfIds (with multiplicity) via DECK_DECODER.
+    - Build a dbfId->name mapping from the current output items (supports basic/non-basic).
+    - Convert counts to {name: count} for names present in items.
+    """
+    if not deck_code:
+        return {}
+    try:
+        dbf_ids = DECK_DECODER(deck_code)
+    except DeckCodeError:
+        return {}
+    id_counts = Counter(dbf_ids)
+    # Build present id->name mapping from items
+    id_to_name: Dict[int, str] = {}
+    for e in items:
+        n = e.get("name")
+        i = e.get("dbfId")
+        if isinstance(n, str) and isinstance(i, int):
+            id_to_name[i] = n
+    name_counts: Dict[str, int] = {}
+    for dbf_id, cnt in id_counts.items():
+        name = id_to_name.get(dbf_id)
+        if name:
+            name_counts[name] = int(cnt)
+    return name_counts
 
 
 # By default, do nothing. Tests can monkeypatch this to return counts.
