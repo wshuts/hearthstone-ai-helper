@@ -5,19 +5,25 @@
     "attack": 8,
     "health": 8,
     "text": "<b>Rush</b>. After your hero attacks an enemy, this attacks it too.",
-    "dbfId": 66176
+    "dbfId": 66176,
+    "countFromDeck": 2,
+    "displayName": "Illidari Inquisitor ×2"
   },
   {
     "name": "Illidari Studies",
     "cost": 1,
     "text": "<b>Discover</b> an <b>Outcast</b> card. Your next one costs (1) less.",
-    "dbfId": 97377
+    "dbfId": 97377,
+    "countFromDeck": 2,
+    "displayName": "Illidari Studies ×2"
   },
   {
     "name": "Red Card",
     "cost": 1,
     "text": "Make a minion go <b>Dormant</b> for 2 turns.",
-    "dbfId": 104515
+    "dbfId": 104515,
+    "countFromDeck": 2,
+    "displayName": "Red Card ×2"
   },
   {
     "name": "Magtheridon, Unreleased",
@@ -25,13 +31,17 @@
     "attack": 12,
     "health": 12,
     "text": "[x]<b>Dormant</b> for 2 turns.\nWhile <b>Dormant</b>, deal 3\ndamage to all enemies at\nthe end of your turn.",
-    "dbfId": 104521
+    "dbfId": 104521,
+    "countFromDeck": 1,
+    "displayName": "Magtheridon, Unreleased ×1"
   },
   {
     "name": "Return Policy",
     "cost": 3,
     "text": "<b>Discover</b> a friendly <b>Deathrattle</b> card you've played this game.\nTrigger its <b>Deathrattle</b>.",
-    "dbfId": 105514
+    "dbfId": 105514,
+    "countFromDeck": 2,
+    "displayName": "Return Policy ×2"
   },
   {
     "name": "Colifero the Artist",
@@ -39,20 +49,26 @@
     "attack": 6,
     "health": 5,
     "text": "[x]<b>Battlecry:</b> Draw a minion.\nTransform all other friendly\nminions into copies of it.",
-    "dbfId": 105522
+    "dbfId": 105522,
+    "countFromDeck": 1,
+    "displayName": "Colifero the Artist ×1"
   },
   {
     "name": "Cliff Dive",
     "cost": 7,
     "text": "[x]Summon 2 minions\nfrom your deck and give\nthem <b>Rush</b>. They go back\nat the end of your turn.",
-    "dbfId": 106583
+    "dbfId": 106583,
+    "countFromDeck": 2,
+    "displayName": "Cliff Dive ×2"
   },
   {
     "name": "Dangerous Cliffside",
     "cost": 4,
     "health": 3,
     "text": "[x]Summon two 1/1\nPirates with <b>Charge</b>.\nAfter your hero attacks,\nreopen this.",
-    "dbfId": 106614
+    "dbfId": 106614,
+    "countFromDeck": 2,
+    "displayName": "Dangerous Cliffside ×2"
   },
   {
     "name": "Ravenous Felhunter",
@@ -60,38 +76,50 @@
     "attack": 5,
     "health": 3,
     "text": "<b>Deathrattle:</b> Resurrect a friendly <b>Deathrattle</b> minion that costs (4) or less. Summon a copy of it.",
-    "dbfId": 114497
+    "dbfId": 114497,
+    "countFromDeck": 2,
+    "displayName": "Ravenous Felhunter ×2"
   },
   {
     "name": "Infiltrate",
     "cost": 3,
     "text": "Choose a minion.\nDeal $3 damage to all other minions.",
-    "dbfId": 114513
+    "dbfId": 114513,
+    "countFromDeck": 2,
+    "displayName": "Infiltrate ×2"
   },
   {
     "name": "Grim Harvest",
     "cost": 2,
     "text": "Draw a card.\nSummon a random <b>Dormant</b> Dreadseed.",
-    "dbfId": 114654
+    "dbfId": 114654,
+    "countFromDeck": 2,
+    "displayName": "Grim Harvest ×2"
   },
   {
     "name": "Wyvern's Slumber",
     "cost": 3,
     "text": "<b>Choose One -</b> Summon two <b>Dormant</b> Dreadseeds; or Deal $2 damage to all minions.",
-    "dbfId": 115198
+    "dbfId": 115198,
+    "countFromDeck": 2,
+    "displayName": "Wyvern's Slumber ×2"
   },
   {
     "name": "Infestation",
     "cost": 2,
     "text": "[x]Get two 1-Cost Gorishi\nStingers. Each one deals\n$2 damage and summons\na 2/1 Grub with <b>Rush</b>.",
-    "dbfId": 117686
+    "dbfId": 117686,
+    "countFromDeck": 2,
+    "displayName": "Infestation ×2"
   },
   {
     "name": "Insect Claw",
     "cost": 3,
     "attack": 2,
     "text": "After your hero attacks, summon a 2/1 Grub with <b>Rush</b>.",
-    "dbfId": 117813
+    "dbfId": 117813,
+    "countFromDeck": 2,
+    "displayName": "Insect Claw ×2"
   },
   {
     "name": "Blob of Tar",
@@ -99,13 +127,17 @@
     "attack": 2,
     "health": 4,
     "text": "[x]<b>Poisonous</b>, <b>Taunt</b>\n<b>Deathrattle:</b> Summon a 1/2\nBlob with <b>Poisonous</b> and a\n1/2 Blob with <b>Taunt</b>.",
-    "dbfId": 118279
+    "dbfId": 118279,
+    "countFromDeck": 2,
+    "displayName": "Blob of Tar ×2"
   },
   {
     "name": "Tuskpiercer",
     "cost": 1,
     "attack": 1,
     "text": "[x]<b>Deathrattle:</b> Draw a\n<b>Deathrattle</b> minion.",
-    "dbfId": 120785
+    "dbfId": 120785,
+    "countFromDeck": 2,
+    "displayName": "Tuskpiercer ×2"
   }
 ]
