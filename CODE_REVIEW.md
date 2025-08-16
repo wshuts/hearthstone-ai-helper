@@ -5,8 +5,8 @@
 ---
 
 ## 0) Prep
-- [ ] Tag current state (e.g., `multiplicity-pre-refactor`).
-- [ ] Ensure all tests are green (baseline).
+- [x] Tag current state (e.g., `multiplicity-pre-refactor`).
+- [x] Ensure all tests are green (baseline).
 
 ---
 
