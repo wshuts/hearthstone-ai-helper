@@ -16,7 +16,7 @@
   - [x] Empty/invalid `deckCode` paths
 - [x] ~~Union/dedupe scenarios~~ — **N/A (2025-08-15): resolver-only focus; moved to card-structure cycle**
 - [x] Prefer **AAA style** (Arrange–Act–Assert).
-- [ ] Use **parametrization** for input→output tables.
+- [x] Use **parametrization** for input→output tables.
 - [x] Assert **observables** (return values / emitted lines), not internals.
 
 ---
