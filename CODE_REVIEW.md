@@ -14,7 +14,7 @@
 - [ ] Add/finish **characterization tests** that pin today’s behavior:
   - [ ] With/without `deckCode`
   - [ ] Empty/invalid `deckCode` paths
-  - [ ] Union/dedupe scenarios (as relevant)
+- [x] ~~Union/dedupe scenarios~~ — **N/A (2025-08-15): resolver-only focus; moved to card-structure cycle**
 - [ ] Prefer **AAA style** (Arrange–Act–Assert).
 - [ ] Use **parametrization** for input→output tables.
 - [ ] Assert **observables** (return values / emitted lines), not internals.
