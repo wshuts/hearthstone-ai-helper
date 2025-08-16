@@ -1,0 +1,183 @@
+[
+  {
+    "name": "Hex",
+    "cost": 3,
+    "text": "Transform a minion into a 0/1 Frog with <b>Taunt</b>.",
+    "dbfId": 69551,
+    "countFromDeck": 2,
+    "displayName": "Hex ×2"
+  },
+  {
+    "name": "Al'Akir the Windlord",
+    "cost": 8,
+    "attack": 3,
+    "health": 6,
+    "text": "<b>Charge, Divine Shield, Taunt, Windfury</b>",
+    "dbfId": 69632,
+    "countFromDeck": 1,
+    "displayName": "Al'Akir the Windlord ×1"
+  },
+  {
+    "name": "Zilliax Deluxe 3000",
+    "cost": 0,
+    "attack": 0,
+    "health": 0,
+    "text": "While building your deck,\ncustomize your very own\nZilliax Deluxe 3000!",
+    "dbfId": 102983,
+    "countFromDeck": 1,
+    "displayName": "Zilliax Deluxe 3000 ×1"
+  },
+  {
+    "name": "Baking Soda Volcano",
+    "cost": 4,
+    "text": "<b>Lifesteal</b>. Deal $10 damage randomly split among all minions.\n<b>Overload:</b> (1)",
+    "dbfId": 103079,
+    "countFromDeck": 2,
+    "displayName": "Baking Soda Volcano ×2"
+  },
+  {
+    "name": "Shudderblock",
+    "cost": 6,
+    "attack": 5,
+    "health": 5,
+    "text": "[x]<b>Miniaturize</b>\n<b>Battlecry:</b> Your next <b>Battlecry</b>\ntriggers 3 times, but can't\n damage the enemy hero.",
+    "dbfId": 103080,
+    "countFromDeck": 1,
+    "displayName": "Shudderblock ×1"
+  },
+  {
+    "name": "Hagatha the Fabled",
+    "cost": 4,
+    "attack": 4,
+    "health": 3,
+    "text": "[x]<b>Battlecry:</b> Draw 2 spells\nthat cost (5) or more.\nTransform them into Slimes\nthat cast the spells.",
+    "dbfId": 103124,
+    "countFromDeck": 1,
+    "displayName": "Hagatha the Fabled ×1"
+  },
+  {
+    "name": "Pop-Up Book",
+    "cost": 1,
+    "text": "Deal $2 damage. Summon two 0/1 Frogs with <b>Taunt</b>.",
+    "dbfId": 103336,
+    "countFromDeck": 2,
+    "displayName": "Pop-Up Book ×2"
+  },
+  {
+    "name": "Wish Upon a Star",
+    "cost": 7,
+    "text": "Give +2/+3 to all minions in your hand, deck, and battlefield.",
+    "dbfId": 105473,
+    "countFromDeck": 1,
+    "displayName": "Wish Upon a Star ×1"
+  },
+  {
+    "name": "Frosty Décor",
+    "cost": 5,
+    "text": "Summon two 2/4 Elementals with <b>Taunt</b> and \"<b>Deathrattle</b>: Gain\n4 Armor\".",
+    "dbfId": 106307,
+    "countFromDeck": 2,
+    "displayName": "Frosty Décor ×2"
+  },
+  {
+    "name": "Bumbling Bellhop",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> If you're holding a\nspell that costs (5) or more,\n summon a copy of this.",
+    "dbfId": 106372,
+    "countFromDeck": 2,
+    "displayName": "Bumbling Bellhop ×2"
+  },
+  {
+    "name": "Birdwatching",
+    "cost": 2,
+    "text": "[x]<b>Discover</b> a minion\nfrom your deck. Give all\ncopies of it +2/+1\n<i>(wherever they are)</i>.",
+    "dbfId": 106574,
+    "countFromDeck": 2,
+    "displayName": "Birdwatching ×2"
+  },
+  {
+    "name": "Parrot Sanctuary",
+    "cost": 2,
+    "health": 3,
+    "text": "[x]Your next <b>Battlecry</b>\nminion costs (1) less.\nAfter you play a <b>Battlecry</b>\nminion, reopen this.",
+    "dbfId": 106576,
+    "countFromDeck": 2,
+    "displayName": "Parrot Sanctuary ×2"
+  },
+  {
+    "name": "Murloc Growfin",
+    "cost": 1,
+    "attack": 1,
+    "health": 1,
+    "text": "[x]<b>Gigantify</b>\n<b>Battlecry:</b> Summon a\nTinyfin with <b>Rush</b> and stats\nequal to this minion's.",
+    "dbfId": 108625,
+    "countFromDeck": 2,
+    "displayName": "Murloc Growfin ×2"
+  },
+  {
+    "name": "Turbulus",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "<b>Hunter Tourist</b>. <b>Battlecry:</b> Give +1/+1 to all other <b>Battlecry</b> minions in your hand, deck, and battlefield.",
+    "dbfId": 110765,
+    "countFromDeck": 1,
+    "displayName": "Turbulus ×1"
+  },
+  {
+    "name": "Farseer Nobundo",
+    "cost": 5,
+    "attack": 6,
+    "health": 4,
+    "text": "<b>Deathrattle:</b> Open the\nGalaxy's Lens. It absorbs the power of the next spell you cast.",
+    "dbfId": 110876,
+    "countFromDeck": 1,
+    "displayName": "Farseer Nobundo ×1"
+  },
+  {
+    "name": "Triangulate",
+    "cost": 2,
+    "text": "[x]<b>Discover</b> a different\nspell from your deck.\nShuffle 3 copies of it\ninto your deck.",
+    "dbfId": 110968,
+    "countFromDeck": 1,
+    "displayName": "Triangulate ×1"
+  },
+  {
+    "name": "The Ceaseless Expanse",
+    "cost": 125,
+    "attack": 10,
+    "health": 10,
+    "text": "[x]Costs (1) less for each time\na card was drawn, played, or\ndestroyed. <b>Battlecry:</b> Destroy\nall other minions.",
+    "dbfId": 111914,
+    "countFromDeck": 1,
+    "displayName": "The Ceaseless Expanse ×1"
+  },
+  {
+    "name": "Nebula",
+    "cost": 9,
+    "text": "[x]<b>Discover</b> two 8-Cost\nminions to summon with\n<b>Taunt</b> and <b>Elusive</b>.",
+    "dbfId": 114348,
+    "countFromDeck": 2,
+    "displayName": "Nebula ×2"
+  },
+  {
+    "name": "Flight of the Firehawk",
+    "cost": 3,
+    "text": "Draw two minions of different minion types. Give them +2/+2.",
+    "dbfId": 117606,
+    "countFromDeck": 2,
+    "displayName": "Flight of the Firehawk ×2"
+  },
+  {
+    "name": "Elise the Navigator",
+    "cost": 4,
+    "attack": 3,
+    "health": 5,
+    "text": "<b>Battlecry:</b> If your deck started with 10 cards of different Costs, craft a custom location.",
+    "dbfId": 117762,
+    "countFromDeck": 1,
+    "displayName": "Elise the Navigator ×1"
+  }
+]

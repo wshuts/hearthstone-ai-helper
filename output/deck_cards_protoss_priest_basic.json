@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Thrive in the Shadows",
+    "cost": 2,
+    "text": "<b>Discover</b> a spell from your deck.",
+    "dbfId": 66861,
+    "countFromDeck": 2,
+    "displayName": "Thrive in the Shadows ×2"
+  },
+  {
+    "name": "Birdwatching",
+    "cost": 2,
+    "text": "[x]<b>Discover</b> a minion\nfrom your deck. Give all\ncopies of it +2/+1\n<i>(wherever they are)</i>.",
+    "dbfId": 106574,
+    "countFromDeck": 2,
+    "displayName": "Birdwatching ×2"
+  },
+  {
+    "name": "Catch of the Day",
+    "cost": 1,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Rush</b>\n<b>Battlecry:</b> Summon a 2/1\nWorm for your opponent.",
+    "dbfId": 106636,
+    "countFromDeck": 2,
+    "displayName": "Catch of the Day ×2"
+  },
+  {
+    "name": "Chillin' Vol'jin",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Hunter Tourist</b>\n<b>Battlecry:</b> Choose 2 minions.\nSwap their stats.",
+    "dbfId": 108887,
+    "countFromDeck": 1,
+    "displayName": "Chillin' Vol'jin ×1"
+  },
+  {
+    "name": "Trusty Fishing Rod",
+    "cost": 3,
+    "attack": 1,
+    "text": "[x]After your hero\n attacks, summon\na 1-Cost minion\nfrom your deck.",
+    "dbfId": 109323,
+    "countFromDeck": 2,
+    "displayName": "Trusty Fishing Rod ×2"
+  },
+  {
+    "name": "Orbital Halo",
+    "cost": 2,
+    "text": "Give a minion +1/+1 and <b>Divine Shield</b>. Costs (0) if you played an adjacent card this turn.",
+    "dbfId": 110835,
+    "countFromDeck": 2,
+    "displayName": "Orbital Halo ×2"
+  },
+  {
+    "name": "Chrono Boost",
+    "cost": 5,
+    "text": "Draw 2 Protoss cards. Summon a 3/4 Zealot with <b>Charge</b>.",
+    "dbfId": 113163,
+    "countFromDeck": 2,
+    "displayName": "Chrono Boost ×2"
+  },
+  {
+    "name": "Photon Cannon",
+    "cost": 2,
+    "text": "Deal $3 damage.\nIf this kills a minion, your Protoss minions cost (1) less this game.",
+    "dbfId": 113168,
+    "countFromDeck": 2,
+    "displayName": "Photon Cannon ×2"
+  },
+  {
+    "name": "Artanis",
+    "cost": 8,
+    "health": 30,
+    "text": "[x]<b>Battlecry:</b> Summon two\n3/4 Zealots with <b>Charge</b>.\nYour Protoss minions cost\n(2) less this game.",
+    "dbfId": 113171,
+    "countFromDeck": 1,
+    "displayName": "Artanis ×1"
+  },
+  {
+    "name": "Hallucination",
+    "cost": 1,
+    "text": "Summon a copy of a\nfriendly Protoss minion.\nIt takes double damage.",
+    "dbfId": 113176,
+    "countFromDeck": 2,
+    "displayName": "Hallucination ×2"
+  },
+  {
+    "name": "Mothership",
+    "cost": 12,
+    "attack": 10,
+    "health": 10,
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry and Deathrattle:</b>\nGet two random\nProtoss minions.",
+    "dbfId": 113203,
+    "countFromDeck": 2,
+    "displayName": "Mothership ×2"
+  },
+  {
+    "name": "Void Ray",
+    "cost": 3,
+    "attack": 3,
+    "health": 2,
+    "text": "<b>Rush</b>, <b>Divine Shield</b>\n<b>Battlecry:</b> If this costs (0), gain +2/+2.",
+    "dbfId": 113733,
+    "countFromDeck": 2,
+    "displayName": "Void Ray ×2"
+  },
+  {
+    "name": "Sentry",
+    "cost": 2,
+    "attack": 2,
+    "health": 2,
+    "text": "<b>Lifesteal</b>. <b>Deathrattle:</b>\nYour Protoss minions cost (1) less this game.",
+    "dbfId": 113738,
+    "countFromDeck": 2,
+    "displayName": "Sentry ×2"
+  },
+  {
+    "name": "Nightmare Lord Xavius",
+    "cost": 4,
+    "attack": 4,
+    "health": 4,
+    "text": "<b>Battlecry:</b> <b>Discover</b> a minion from your deck. Give it a <b>Dark Gift</b>.",
+    "dbfId": 115139,
+    "countFromDeck": 1,
+    "displayName": "Nightmare Lord Xavius ×1"
+  },
+  {
+    "name": "Gravedawn Sunbloom",
+    "cost": 4,
+    "text": "Draw 2 cards. <b>Kindred:</b> This costs (2) less.",
+    "dbfId": 117317,
+    "countFromDeck": 1,
+    "displayName": "Gravedawn Sunbloom ×1"
+  },
+  {
+    "name": "Resuscitate",
+    "cost": 5,
+    "text": "Resurrect a 1, 2,\nand 3-Cost minion.\nGive them <b>Reborn</b>.",
+    "dbfId": 117557,
+    "countFromDeck": 2,
+    "displayName": "Resuscitate ×2"
+  },
+  {
+    "name": "Power Word: Shield",
+    "cost": 1,
+    "text": "Give a minion +2 Health.\nDraw a card.",
+    "dbfId": 120786,
+    "countFromDeck": 2,
+    "displayName": "Power Word: Shield ×2"
+  }
+]
