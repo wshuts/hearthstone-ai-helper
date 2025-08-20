@@ -22,7 +22,7 @@
 ---
 
 ## 2) Introduce Minimal DI Seams (No Behavior Change)
-- [ ] **Multiplicity strategy seam**
+- [x] **Multiplicity strategy seam**
   - [ ] Function accepts `multiplicity_resolver` with default `_no_augmentation`.
   - [ ] Resolver is **pure**: `(items, deck_code) -> Dict[str,int]`.
   - [ ] Name is intention-revealing (`_no_augmentation`, not “default”).

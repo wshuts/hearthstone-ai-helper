@@ -166,17 +166,23 @@ def _default_multiplicity_resolver(items: List[dict], deck_code: str) -> Dict[st
 # By default, do nothing. Tests can monkeypatch this to return counts.
 MULTIPLICITY_RESOLVER: MultiplicityResolver = _default_multiplicity_resolver
 
-
-def _apply_multiplicity_by_name(card_items: List[dict], deck_code: Optional[str]) -> None:
+def _apply_multiplicity_by_name(
+    card_items: List[dict],
+    deck_code: Optional[str],
+    *,
+    multiplicity_resolver: MultiplicityResolver = MULTIPLICITY_RESOLVER,
+) -> None:
     """
     Add multiplicity fields only when a deck_code is provided AND the resolver returns counts.
     Keeps 'name' faithful to source. Adds:
       * countFromDeck (int)
       * displayName   (str) -> "<name> ×<countFromDeck>"
+
+    DI seam: resolver is injected via `multiplicity_resolver` (defaults to current MULTIPLICITY_RESOLVER).
     """
     if not deck_code:
         return
-    counts = MULTIPLICITY_RESOLVER(card_items, deck_code)
+    counts = multiplicity_resolver(card_items, deck_code)
     if not isinstance(counts, dict) or not counts:
         return
     for entry in card_items:
@@ -234,7 +240,9 @@ def main(argv: list[str] | None = None) -> int:
 
         # Conditionally augment with multiplicity via resolver hook (test-agnostic).
         # Note: No broad exception catching here; resolver errors will surface in tests.
-        _apply_multiplicity_by_name(filtered, raw_cfg.get("deckCode"))
+        _apply_multiplicity_by_name(
+            filtered, raw_cfg.get("deckCode"), multiplicity_resolver=MULTIPLICITY_RESOLVER
+        )
 
         if output_file:
             write_output(output_file, filtered)
