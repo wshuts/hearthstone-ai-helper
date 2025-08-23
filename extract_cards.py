@@ -134,6 +134,14 @@ DECK_DECODER = lambda s: decode_deck_code_real(s)
 MultiplicityResolver = Callable[[List[dict], str], Dict[str, int]]
 
 
+def _no_augmentation(_items: List[dict], _deck_code: str) -> Dict[str, int]:
+    """
+    Intention-revealing no-op resolver:
+    returns an empty mapping so no multiplicity fields are added.
+    Kept separate from the current SPIKE default to enable a later flip of defaults without behavior drift now.
+    """
+    return {}
+
 def _default_multiplicity_resolver(items: List[dict], deck_code: str) -> Dict[str, int]:
     """
     Production SPIKE implementation:

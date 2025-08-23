@@ -23,9 +23,9 @@
 
 ## 2) Introduce Minimal DI Seams (No Behavior Change)
 - [x] **Multiplicity strategy seam**
-  - [ ] Function accepts `multiplicity_resolver` with default `_no_augmentation`.
-  - [ ] Resolver is **pure**: `(items, deck_code) -> Dict[str,int]`.
-  - [ ] Name is intention-revealing (`_no_augmentation`, not “default”).
+  - [x] Function accepts `multiplicity_resolver` with default `_no_augmentation`.
+  - [x] Resolver is **pure**: `(items, deck_code) -> Dict[str,int]`.
+  - [x] Name is intention-revealing (`_no_augmentation`, not “default”).
 - [ ] **Deck code decode seam**
   - [ ] Accept `decode_deck: (str) -> Dict[int,int]` (dbfId→count).
   - [ ] Provide a real default that uses the library; tests inject fakes.
