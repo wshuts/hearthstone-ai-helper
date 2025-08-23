@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Shadowstep",
+    "cost": 0,
+    "text": "Return a friendly minion to your hand. It costs (2) less.",
+    "dbfId": 69622,
+    "countFromDeck": 2,
+    "displayName": "Shadowstep ×2"
+  },
+  {
+    "name": "Preparation",
+    "cost": 0,
+    "text": "The next spell you cast this turn costs (2) less.",
+    "dbfId": 69623,
+    "countFromDeck": 2,
+    "displayName": "Preparation ×2"
+  },
+  {
+    "name": "Cult Neophyte",
+    "cost": 2,
+    "attack": 3,
+    "health": 2,
+    "text": "<b>Battlecry:</b> Your opponent's spells cost (1) more next turn.",
+    "dbfId": 102224,
+    "countFromDeck": 2,
+    "displayName": "Cult Neophyte ×2"
+  },
+  {
+    "name": "Zilliax Deluxe 3000",
+    "cost": 0,
+    "attack": 0,
+    "health": 0,
+    "text": "While building your deck,\ncustomize your very own\nZilliax Deluxe 3000!",
+    "dbfId": 102983,
+    "countFromDeck": 1,
+    "displayName": "Zilliax Deluxe 3000 ×1"
+  },
+  {
+    "name": "Observer of Mysteries",
+    "cost": 3,
+    "attack": 2,
+    "health": 2,
+    "text": "<b>Battlecry:</b> Cast 2 random <b>Secrets</b>. At the start of your turn, destroy them.",
+    "dbfId": 103549,
+    "countFromDeck": 2,
+    "displayName": "Observer of Mysteries ×2"
+  },
+  {
+    "name": "Sandbox Scoundrel",
+    "cost": 5,
+    "attack": 4,
+    "health": 3,
+    "text": "[x]<b>Miniaturize</b>\n<b>Battlecry:</b> Your next card\nthis turn costs (3) less.",
+    "dbfId": 103603,
+    "countFromDeck": 2,
+    "displayName": "Sandbox Scoundrel ×2"
+  },
+  {
+    "name": "Dubious Purchase",
+    "cost": 4,
+    "text": "Draw 3 cards.\n<b>Combo:</b> Destroy a random enemy minion.",
+    "dbfId": 105142,
+    "countFromDeck": 2,
+    "displayName": "Dubious Purchase ×2"
+  },
+  {
+    "name": "Metal Detector",
+    "cost": 3,
+    "attack": 3,
+    "text": "After your hero attacks and kills a minion,\nget a Coin.",
+    "dbfId": 107753,
+    "countFromDeck": 2,
+    "displayName": "Metal Detector ×2"
+  },
+  {
+    "name": "Griftah, Trusted Vendor",
+    "cost": 4,
+    "attack": 4,
+    "health": 5,
+    "text": "[x]<b>Battlecry:</b> <b>Discover</b> an\namazing Amulet to give to\nboth players. <i>(The enemy's\nis a phony version!)</i>",
+    "dbfId": 108967,
+    "countFromDeck": 1,
+    "displayName": "Griftah, Trusted Vendor ×1"
+  },
+  {
+    "name": "Oh, Manager!",
+    "cost": 2,
+    "text": "Deal $2 damage.\n<b>Combo:</b> Get a Coin.",
+    "dbfId": 109324,
+    "countFromDeck": 2,
+    "displayName": "Oh, Manager! ×2"
+  },
+  {
+    "name": "Spacerock Collector",
+    "cost": 1,
+    "attack": 2,
+    "health": 1,
+    "text": "<b>Battlecry:</b> Your next <b>Combo</b> card costs (1) less.",
+    "dbfId": 111338,
+    "countFromDeck": 2,
+    "displayName": "Spacerock Collector ×2"
+  },
+  {
+    "name": "Ysera, Emerald Aspect",
+    "cost": 9,
+    "attack": 4,
+    "health": 12,
+    "text": "[x]<b>Start of Game:</b> Increase both\nplayers'maximum Mana by 5.\n<b>Battlecry:</b> Gain 3\nMana Crystals.",
+    "dbfId": 113321,
+    "countFromDeck": 1,
+    "displayName": "Ysera, Emerald Aspect ×1"
+  },
+  {
+    "name": "Creature of Madness",
+    "cost": 2,
+    "attack": 1,
+    "health": 2,
+    "text": "<b>Battlecry:</b> <b>Discover</b> a\n3-Cost minion with a <b>Dark Gift.</b>",
+    "dbfId": 113973,
+    "countFromDeck": 2,
+    "displayName": "Creature of Madness ×2"
+  },
+  {
+    "name": "Ashamane",
+    "cost": 9,
+    "attack": 7,
+    "health": 7,
+    "text": "[x]<b>Battlecry:</b> Fill your hand\nwith copies of cards from\nyour opponent's deck.\nThey cost (3) less.",
+    "dbfId": 114527,
+    "countFromDeck": 1,
+    "displayName": "Ashamane ×1"
+  },
+  {
+    "name": "Naralex, Herald of the Flights",
+    "cost": 7,
+    "attack": 7,
+    "health": 7,
+    "text": "Your first Dragon\neach turn costs (1).",
+    "dbfId": 114849,
+    "countFromDeck": 1,
+    "displayName": "Naralex, Herald of the Flights ×1"
+  },
+  {
+    "name": "Shaladrassil",
+    "cost": 8,
+    "text": "[x]Get all 5 Dream cards.\nIf you've played a higher\nCost card while holding\nthis, corrupt them!",
+    "dbfId": 115090,
+    "countFromDeck": 1,
+    "displayName": "Shaladrassil ×1"
+  },
+  {
+    "name": "Nightmare Lord Xavius",
+    "cost": 4,
+    "attack": 4,
+    "health": 4,
+    "text": "<b>Battlecry:</b> <b>Discover</b> a minion from your deck. Give it a <b>Dark Gift</b>.",
+    "dbfId": 115139,
+    "countFromDeck": 1,
+    "displayName": "Nightmare Lord Xavius ×1"
+  },
+  {
+    "name": "Fyrakk the Blazing",
+    "cost": 9,
+    "attack": 7,
+    "health": 7,
+    "text": "[x]<b>Immune</b> to Fire spells.\n<b>Battlecry:</b> Cast 20 Mana\nworth of Fire spells at\nrandom enemies.",
+    "dbfId": 115756,
+    "countFromDeck": 1,
+    "displayName": "Fyrakk the Blazing ×1"
+  },
+  {
+    "name": "Elise the Navigator",
+    "cost": 4,
+    "attack": 3,
+    "health": 5,
+    "text": "<b>Battlecry:</b> If your deck started with 10 cards of different Costs, craft a custom location.",
+    "dbfId": 117762,
+    "countFromDeck": 1,
+    "displayName": "Elise the Navigator ×1"
+  },
+  {
+    "name": "Opu the Unseen",
+    "cost": 6,
+    "attack": 6,
+    "health": 4,
+    "text": "<b><b>Stealth</b>.</b> <b>Battlecry, Combo,\nand Deathrattle:</b> Cast\n'Fan of Knives'.",
+    "dbfId": 119532,
+    "countFromDeck": 1,
+    "displayName": "Opu the Unseen ×1"
+  }
+]
