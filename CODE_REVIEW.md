@@ -23,9 +23,10 @@
 
 ## 2) Introduce Minimal DI Seams (No Behavior Change)
 - [x] **Multiplicity strategy seam**
-  - [x] Function accepts `multiplicity_resolver` with default `_no_augmentation`.
+  - [x] Function accepts `multiplicity_resolver` with default **production resolver** (`MULTIPLICITY_RESOLVER`).
   - [x] Resolver is **pure**: `(items, deck_code) -> Dict[str,int]`.
-  - [x] Name is intention-revealing (`_no_augmentation`, not “default”).
+  - [x] Tests may inject fakes (`noop`, `spike`, etc.) defined in the **test suite**.
+  - [x] No test-only resolvers live in production code.
 - [ ] **Deck code decode seam**
   - [ ] Accept `decode_deck: (str) -> Dict[int,int]` (dbfId→count).
   - [ ] Provide a real default that uses the library; tests inject fakes.
@@ -83,7 +84,7 @@ DecodeDeck = Callable[[str], Dict[int, int]]  # dbfId -> count
 def resolve_multiplicity(
     items: List[dict],
     deck_code: str | None,
-    resolver: MultiplicityResolver = _no_augmentation,
+    resolver: MultiplicityResolver = MULTIPLICITY_RESOLVER,
 ) -> Dict[str, int]:
     return {} if not deck_code else resolver(items, deck_code)
 ```
@@ -95,6 +96,7 @@ def resolve_multiplicity(
 - [ ] Commented-out code; comments that explain *what* instead of *why*.
 - [ ] Tests that rely on real filesystem or external libs unnecessarily.
 - [ ] Over-parameterized functions with unclear names.
+ - [ ] Introducing test-only collaborators in production code (e.g., noop resolvers) — keep these in test fixtures instead.
 
 ---
 
