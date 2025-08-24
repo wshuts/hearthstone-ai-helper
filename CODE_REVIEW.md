@@ -31,9 +31,9 @@
     - [x] Resolver is **pure**: `(items, deck_code) -> Dict[str,int]`.
     - [x] Tests may inject fakes (`noop`, `spike`, etc.) defined in the **test suite**.
     - [x] No test-only resolvers live in production code.
-- [ ] **Deck code decode seam**
-    - [ ] Accept `decode_deck: (str) -> Dict[int,int]` (dbfId→count).
-    - [ ] Provide a real default that uses the library; tests inject fakes.
+- [x] **Deck code decode seam**
+    - [x] Accept `decode_deck: (str) -> Dict[int,int]` (dbfId→count).
+    - [x] Provide a real default that uses the library; tests inject fakes.
 - [ ] **I/O boundaries** are explicit: parsing/loading/writing are at edges; core funcs are pure.
 
 ---

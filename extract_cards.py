@@ -1,10 +1,12 @@
 import argparse
 import json
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Optional
-from collections import Counter
+
+from deck_decode import DecodeDeck as DecodeDeckCounts, default_decode_deck
 
 
 class ConfigError(Exception):
@@ -127,7 +129,22 @@ def decode_deck_code_real(deck_code: str) -> list[int]:
 DECK_DECODER: DeckDecoder
 DECK_DECODER = lambda s: decode_deck_code_real(s)
 
+
 # -- Multiplicity extension seam (test-agnostic) ------------------------------
+
+# --- New: Deck-code decode seam (counts map), no behavior change -------------
+def decode_deck_counts(
+        deck_code: str,
+        decode_deck: DecodeDeckCounts = default_decode_deck,
+) -> Dict[int, int]:
+    """
+    Thin seam wrapper for decoding deck codes into a mapping of dbfId->count.
+    Not yet threaded into main flow; tests can inject a fake.
+    """
+    return decode_deck(deck_code)
+
+
+# -----------------------------------------------------------------------------
 # Tests may monkeypatch this symbol to a callable:
 #   MULTIPLICITY_RESOLVER(card_items: list[dict], deck_code: str) -> dict[str, int]
 # It should return a mapping from card *name* to count.
@@ -166,11 +183,12 @@ def _default_multiplicity_resolver(items: List[dict], deck_code: str) -> Dict[st
 # By default, do nothing. Tests can monkeypatch this to return counts.
 MULTIPLICITY_RESOLVER: MultiplicityResolver = _default_multiplicity_resolver
 
+
 def _apply_multiplicity_by_name(
-    card_items: List[dict],
-    deck_code: Optional[str],
-    *,
-    multiplicity_resolver: MultiplicityResolver = MULTIPLICITY_RESOLVER,
+        card_items: List[dict],
+        deck_code: Optional[str],
+        *,
+        multiplicity_resolver: MultiplicityResolver = MULTIPLICITY_RESOLVER,
 ) -> None:
     """
     Add multiplicity fields only when a deck_code is provided AND the resolver returns counts.
