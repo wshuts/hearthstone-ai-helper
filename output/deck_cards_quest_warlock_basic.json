@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Hellfire",
+    "cost": 3,
+    "text": "Deal $3 damage to ALL characters.",
+    "dbfId": 69519,
+    "countFromDeck": 2,
+    "displayName": "Hellfire ×2"
+  },
+  {
+    "name": "Glacial Shard",
+    "cost": 1,
+    "attack": 2,
+    "health": 1,
+    "text": "<b>Battlecry:</b> <b>Freeze</b> an enemy.",
+    "dbfId": 102227,
+    "countFromDeck": 2,
+    "displayName": "Glacial Shard ×2"
+  },
+  {
+    "name": "Sweetened Snowflurry",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "[x]<b>Miniaturize</b>\n<b>Battlecry:</b> Get 2 random\n<b>Temporary</b> Frost spells.",
+    "dbfId": 102784,
+    "countFromDeck": 2,
+    "displayName": "Sweetened Snowflurry ×2"
+  },
+  {
+    "name": "Sketch Artist",
+    "cost": 3,
+    "attack": 3,
+    "health": 3,
+    "text": "<b>Battlecry:</b> Draw a Shadow spell. Get a <b>Temporary</b> copy of it.",
+    "dbfId": 104858,
+    "countFromDeck": 1,
+    "displayName": "Sketch Artist ×1"
+  },
+  {
+    "name": "Mass Production",
+    "cost": 1,
+    "text": "Draw 2 cards. Deal $3 damage to your hero. Shuffle 2 copies of this into your deck.",
+    "dbfId": 105539,
+    "countFromDeck": 2,
+    "displayName": "Mass Production ×2"
+  },
+  {
+    "name": "Summoner Darkmarrow",
+    "cost": 4,
+    "attack": 4,
+    "health": 4,
+    "text": "[x]<b>Death Knight Tourist</b>\nYour <b>Deathrattles</b> trigger twice.\nAfter you play a <b>Deathrattle</b>\nminion, destroy it.",
+    "dbfId": 105543,
+    "countFromDeck": 1,
+    "displayName": "Summoner Darkmarrow ×1"
+  },
+  {
+    "name": "Tidepool Pupil",
+    "cost": 2,
+    "attack": 2,
+    "health": 2,
+    "text": "[x]<b>Battlecry:</b> If you've cast 3\nspells while holding this,\n<b>Discover</b> one of them.",
+    "dbfId": 106306,
+    "countFromDeck": 2,
+    "displayName": "Tidepool Pupil ×2"
+  },
+  {
+    "name": "Horizon's Edge",
+    "cost": 4,
+    "health": 5,
+    "text": "[x]Deal 3 damage\nrandomly split among all\nenemies. After a friendly\nminion dies, reopen this.",
+    "dbfId": 107719,
+    "countFromDeck": 2,
+    "displayName": "Horizon's Edge ×2"
+  },
+  {
+    "name": "Corpsicle",
+    "cost": 2,
+    "text": "Deal $3 damage. Spend 3 <b>Corpses</b> to return this to your hand\nat the end of your turn.",
+    "dbfId": 107775,
+    "countFromDeck": 2,
+    "displayName": "Corpsicle ×2"
+  },
+  {
+    "name": "Healthstone",
+    "cost": 0,
+    "text": "<b>Tradeable</b>\nRestore all damage your hero has taken this turn.\n<i>(0)</i>",
+    "dbfId": 111177,
+    "countFromDeck": 1,
+    "displayName": "Healthstone ×1"
+  },
+  {
+    "name": "Kerrigan, Queen of Blades",
+    "cost": 8,
+    "health": 30,
+    "text": "[x]<b>Battlecry:</b> Summon two\n2/5 Hive Queens. Deal 3\ndamage to all enemies.",
+    "dbfId": 112846,
+    "countFromDeck": 1,
+    "displayName": "Kerrigan, Queen of Blades ×1"
+  },
+  {
+    "name": "The Soularium",
+    "cost": 1,
+    "text": "Draw 3 cards.\nThey are <b>Temporary</b>.",
+    "dbfId": 116719,
+    "countFromDeck": 1,
+    "displayName": "The Soularium ×1"
+  },
+  {
+    "name": "Escape the Underfel",
+    "cost": 1,
+    "text": "<b>Quest:</b> Play 5 <b>Temporary</b> cards. <b>Reward:</b> Underfel Rift.",
+    "dbfId": 117827,
+    "countFromDeck": 1,
+    "displayName": "Escape the Underfel ×1"
+  },
+  {
+    "name": "Bloodpetal Biome",
+    "cost": 1,
+    "health": 2,
+    "text": "<b>Discover</b> a <b>Temporary</b> 1-Cost minion.",
+    "dbfId": 117837,
+    "countFromDeck": 2,
+    "displayName": "Bloodpetal Biome ×2"
+  },
+  {
+    "name": "Spelunker",
+    "cost": 2,
+    "attack": 2,
+    "health": 3,
+    "text": "<b>Battlecry:</b> Your next <b>Temporary</b> card costs\n(2) less.",
+    "dbfId": 117890,
+    "countFromDeck": 2,
+    "displayName": "Spelunker ×2"
+  },
+  {
+    "name": "Cursed Catacombs",
+    "cost": 0,
+    "text": "<b>Discover</b> a minion\nfrom your deck.\nMake it <b>Temporary</b>.",
+    "dbfId": 117892,
+    "countFromDeck": 2,
+    "displayName": "Cursed Catacombs ×2"
+  },
+  {
+    "name": "Questing Assistant",
+    "cost": 2,
+    "attack": 3,
+    "health": 2,
+    "text": "[x]<b>Battlecry:</b> If you played\na <b>Quest</b> this game,\ndeal 3 damage to an\nenemy minion.",
+    "dbfId": 118177,
+    "countFromDeck": 2,
+    "displayName": "Questing Assistant ×2"
+  },
+  {
+    "name": "Wisp",
+    "cost": 0,
+    "attack": 1,
+    "health": 1,
+    "dbfId": 120970,
+    "countFromDeck": 2,
+    "displayName": "Wisp ×2"
+  }
+]
