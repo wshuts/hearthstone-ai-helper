@@ -137,7 +137,7 @@
   {
     "name": "Cursed Catacombs",
     "cost": 0,
-    "text": "<b>Discover</b> a minion\nfrom your deck.\nMake it <b>Temporary</b>.",
+    "text": "<b>Discover</b> another\ncard from your deck. Make it <b>Temporary</b>.",
     "dbfId": 117892,
     "countFromDeck": 2,
     "displayName": "Cursed Catacombs ×2"

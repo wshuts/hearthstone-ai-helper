@@ -1,5 +1,5 @@
 {
-  "sourceFile": "data/standard_cards_aug_2025.json",
+  "sourceFile": "data/cards_all_enUS.json",
   "deckCode": "AAECAYrhBgaaswbHuAbJ5AbO8QbvjwfDmAcMj58E054GgKMGw7gGwr4Gx8kG/8kGzZgHgpkHhJkHoZsHirEHAAA=",
   "basic": true,
   "outputFile": "output/deck_cards_quest_warlock_basic.json"
