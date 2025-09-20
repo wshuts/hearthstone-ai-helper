@@ -1,0 +1,1066 @@
+[
+  {
+    "id": "CORE_CS2_062",
+    "dbfId": 69519,
+    "name": "Hellfire",
+    "text": "Deal $3 damage to ALL characters.",
+    "set": "Core",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 3,
+    "faction": "NEUTRAL",
+    "rarity": "Common",
+    "spellSchool": "FIRE",
+    "counterpartCards": [
+      950,
+      68343,
+      69519,
+      75917
+    ],
+    "mechanics": [
+      "DEAL_DAMAGE"
+    ],
+    "artist": "Chippy",
+    "flavor": "It's spells like these that make it hard for Warlocks to get decent help.",
+    "audio2": {
+      "BASIC_play": {
+        "VO_Hero_07d_Male_OldGod_TRIGGER_HELLFIRE_01": {
+          "mainSounds": [
+            "VO_Hero_07d_Male_OldGod_TRIGGER_HELLFIRE_01.ogg"
+          ]
+        },
+        "VO_HERO_07l_Female_Undead_TRIGGER_Hellfire_01": {
+          "mainSounds": [
+            "VO_HERO_07l_Female_Undead_TRIGGER_Hellfire_01.ogg"
+          ]
+        },
+        "VO_HERO_07ag_Male_Demon_TRIGGER_Hellfire_01": {
+          "mainSounds": [
+            "VO_HERO_07ag_Male_Demon_TRIGGER_Hellfire_01.ogg"
+          ]
+        },
+        "VO_Hero_07an_ZailStarfallen_h_BloodElf_Emote_Trigger_Hellfire_01": {
+          "mainSounds": [
+            "VO_Hero_07an_ZailStarfallen_h_BloodElf_Emote_Trigger_Hellfire_01.ogg"
+          ]
+        },
+        "VO_HERO_07ax_Female_InfestedHuman_TRIGGER_Hellfire_01": {
+          "mainSounds": [
+            "VO_HERO_07ax_Female_InfestedHuman_TRIGGER_Hellfire_01.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 2,
+    "displayName": "Hellfire ×2"
+  },
+  {
+    "id": "CORE_ICC_055",
+    "dbfId": 69735,
+    "name": "Drain Soul",
+    "text": "<b>Lifesteal</b>\nDeal $3 damage\nto a minion.",
+    "set": "Core",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 2,
+    "rarity": "Common",
+    "spellSchool": "SHADOW",
+    "counterpartCards": [
+      42658,
+      69735,
+      75920
+    ],
+    "mechanics": [
+      "LIFESTEAL",
+      "DEAL_DAMAGE"
+    ],
+    "artist": "Kerem Beyit",
+    "flavor": "Cleans even the toughest clogs with just a flick of the wrist!",
+    "audio2": {
+      "BASIC_play": {
+        "VO_Hero_07an_ZailStarfallen_h_BloodElf_Emote_Trigger_DrainSoul_01": {
+          "mainSounds": [
+            "VO_Hero_07an_ZailStarfallen_h_BloodElf_Emote_Trigger_DrainSoul_01.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 2,
+    "displayName": "Drain Soul ×2"
+  },
+  {
+    "id": "TOY_330",
+    "dbfId": 102983,
+    "name": "Zilliax Deluxe 3000",
+    "text": "While building your deck,\ncustomize your very own\nZilliax Deluxe 3000!",
+    "set": "Whizbangs_workshop",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 0,
+    "health": 0,
+    "collectible": true,
+    "cost": 0,
+    "race": "MECH",
+    "races": [
+      "MECH"
+    ],
+    "rarity": "Legendary",
+    "artist": "Mooncolony",
+    "flavor": "It only took us 2998 prototypes to figure out how to make the perfect card... by having YOU do it!",
+    "audio2": {
+      "BASIC_play": {
+        "TOY_330_ZilliaxtheCustomizable_Stinger": {
+          "mainSounds": [
+            "TOY_330_ZilliaxtheCustomizable_Stinger.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_TOY_330_Mech_Emote_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_TOY_330_Mech_Emote_Attack_01.ogg"
+          ]
+        },
+        "ClunkyMechLarge_Attack_Underlay": {
+          "mainSounds": [
+            "ClunkyMechLarge_Attack_Underlay.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_TOY_330_Mech_Emote_Death_01.ogg"
+          ]
+        },
+        "ClunkyMechLarge_Death_Underlay": {
+          "mainSounds": [
+            "ClunkyMechLarge_Death_Underlay.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 1,
+    "displayName": "Zilliax Deluxe 3000 ×1"
+  },
+  {
+    "id": "TOY_883",
+    "dbfId": 105097,
+    "name": "Table Flip",
+    "text": "Deal $3 damage to all enemy minions.\nCosts (1) less for each other card in your hand.",
+    "set": "Whizbangs_workshop",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 10,
+    "rarity": "Common",
+    "spellSchool": "SHADOW",
+    "mechanics": [
+      "DEAL_DAMAGE"
+    ],
+    "artist": "L. Lullabi & K. Turovec",
+    "flavor": "\"Judge!\"",
+    "countFromDeck": 1,
+    "displayName": "Table Flip ×1"
+  },
+  {
+    "id": "VAC_503",
+    "dbfId": 105543,
+    "name": "Summoner Darkmarrow",
+    "text": "[x]<b>Death Knight Tourist</b>\nYour <b>Deathrattles</b> trigger twice.\nAfter you play a <b>Deathrattle</b>\nminion, destroy it.",
+    "set": "Perils_in_paradise",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "touristFor": [
+      "DEATHKNIGHT"
+    ],
+    "type": "Minion",
+    "attack": 4,
+    "health": 4,
+    "collectible": true,
+    "cost": 4,
+    "race": "UNDEAD",
+    "races": [
+      "UNDEAD"
+    ],
+    "rarity": "Legendary",
+    "mechanics": [
+      "AURA",
+      "TRIGGER_VISUAL"
+    ],
+    "referencedTags": [
+      "DEATHRATTLE"
+    ],
+    "artist": "Grafit",
+    "availableAsSignature": true,
+    "flavor": "Some people say your name can influence what career you go into. Summoner Darkmarrow is not one of those people.",
+    "audio2": {
+      "BASIC_play": {
+        "VAC_503_SummonerDarkmarrow_Stinger": {
+          "mainSounds": [
+            "VAC_503_SummonerDarkmarrow_Stinger.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_VAC_503_Male_Forsaken_Play_01.ogg"
+          ]
+        },
+        "ShadowMagic_Play_Underlay": {
+          "mainSounds": [
+            "ShadowMagic_Play_Underlay.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_VAC_503_Male_Forsaken_Attack_01.ogg"
+          ]
+        },
+        "ShadowMagic_Attack_Underlay": {
+          "mainSounds": [
+            "ShadowMagic_Attack_Underlay.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_VAC_503_Male_Forsaken_Death_01.ogg"
+          ]
+        },
+        "ShadowMagic_Death_Underlay": {
+          "mainSounds": [
+            "ShadowMagic_Death_Underlay.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 1,
+    "displayName": "Summoner Darkmarrow ×1"
+  },
+  {
+    "id": "VAC_426",
+    "dbfId": 107720,
+    "name": "Eliza Goreblade",
+    "text": "<b>Deathrattle:</b> For the rest of\nthe game, your minions\nhave +1 Attack.",
+    "set": "Perils_in_paradise",
+    "cardClass": "DEATHKNIGHT",
+    "playerClass": "Deathknight",
+    "classes": [
+      "DEATHKNIGHT"
+    ],
+    "type": "Minion",
+    "attack": 4,
+    "health": 3,
+    "collectible": true,
+    "cost": 4,
+    "additionalCosts": {
+      "BLOODRUNE": 1,
+      "FROSTRUNE": 1
+    },
+    "race": "PIRATE",
+    "races": [
+      "PIRATE",
+      "UNDEAD"
+    ],
+    "rarity": "Legendary",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "artist": "Konstantin Porubov",
+    "availableAsDiamond": true,
+    "flavor": "Dead men tell no tales, but Undead Pirates are yappers.",
+    "audio2": {
+      "BASIC_play": {
+        "VAC_426_ElizaGoreblade_Stinger": {
+          "mainSounds": [
+            "VAC_426_ElizaGoreblade_Stinger.ogg"
+          ]
+        },
+        "Play": {
+          "mainSounds": [
+            "VO_VAC_426_Female_Undead_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack": {
+          "mainSounds": [
+            "VO_VAC_426_Female_Undead_Attack_01.ogg"
+          ]
+        },
+        "Swords1_Attack_Underlay": {
+          "mainSounds": [
+            "Swords1_Attack_Underlay.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death": {
+          "mainSounds": [
+            "VO_VAC_426_Female_Undead_Death_01.ogg"
+          ]
+        },
+        "Swords1_Death_Underlay": {
+          "mainSounds": [
+            "Swords1_Death_Underlay.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 1,
+    "displayName": "Eliza Goreblade ×1"
+  },
+  {
+    "id": "VAC_939",
+    "dbfId": 107796,
+    "name": "Eat! The! Imp!",
+    "text": "Destroy a friendly\nminion to draw 3 cards.",
+    "set": "Perils_in_paradise",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 2,
+    "rarity": "Common",
+    "spellSchool": "FIRE",
+    "artist": "Matt Dixon",
+    "flavor": "No need for flavor text, it's seasoned perfectly!",
+    "countFromDeck": 2,
+    "displayName": "Eat! The! Imp! ×2"
+  },
+  {
+    "id": "WORK_042",
+    "dbfId": 110858,
+    "name": "Carnivorous Cubicle",
+    "text": "[x]<b>Battlecry:</b> Destroy a\nfriendly minion.\nSummon a copy of it at\n the end of your turns.",
+    "set": "Traveling_travel_agency",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 4,
+    "health": 6,
+    "collectible": true,
+    "cost": 5,
+    "rarity": "Epic",
+    "mechanics": [
+      "BATTLECRY",
+      "END_OF_TURN"
+    ],
+    "artist": "Jakub Kasper",
+    "flavor": "Hey, no eating at your desk!",
+    "audio2": {
+      "BASIC_play": {
+        "Play_LOOT_161_CarnivorousCube_Play": {
+          "mainSounds": [
+            "LOOT_161_CarnivorousCube_Play.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "Attack_LOOT_161_CarnivorousCube_Attack": {
+          "mainSounds": [
+            "LOOT_161_CarnivorousCube_Attack.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "Death_LOOT_161_CarnivorousCube_Death": {
+          "mainSounds": [
+            "LOOT_161_CarnivorousCube_Death.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 1,
+    "displayName": "Carnivorous Cubicle ×1"
+  },
+  {
+    "id": "WORK_028",
+    "dbfId": 112372,
+    "name": "Eternal Layover",
+    "text": "[x]Give ALL minions <b>Reborn</b>,\nthen destroy all minions.",
+    "set": "Traveling_travel_agency",
+    "cardClass": "DEATHKNIGHT",
+    "playerClass": "Deathknight",
+    "classes": [
+      "DEATHKNIGHT"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 4,
+    "additionalCosts": {
+      "UNHOLYRUNE": 1
+    },
+    "rarity": "Rare",
+    "referencedTags": [
+      "REBORN"
+    ],
+    "artist": "Brian Despain",
+    "flavor": "Get away from it all! Forever.",
+    "countFromDeck": 2,
+    "displayName": "Eternal Layover ×2"
+  },
+  {
+    "id": "SC_004",
+    "dbfId": 112846,
+    "name": "Kerrigan, Queen of Blades",
+    "text": "[x]<b>Battlecry:</b> Summon two\n2/5 Hive Queens. Deal 3\ndamage to all enemies.",
+    "set": "Heroes_of_starcraft",
+    "classes": [
+      "DEATHKNIGHT",
+      "HUNTER",
+      "WARLOCK",
+      "DEMONHUNTER"
+    ],
+    "type": "Hero",
+    "health": 30,
+    "armor": 5,
+    "collectible": true,
+    "cost": 8,
+    "rarity": "Legendary",
+    "mechanics": [
+      "BATTLECRY",
+      "ZERG",
+      "DEAL_DAMAGE"
+    ],
+    "artist": "James Ryman",
+    "availableAsSignature": true,
+    "relatedCardDbfIds": [
+      112847,
+      112834,
+      113569
+    ],
+    "flavor": "Betrayed by the terrans, she is determined to use the power of the zerg Swarm for her revenge.",
+    "audio2": {
+      "BASIC_play": {
+        "SC_004_Kerrigan_Stinger": {
+          "mainSounds": [
+            "SC_004_Kerrigan_Stinger.ogg"
+          ]
+        },
+        "VO_SC_004_Female_InfestedHuman_Play_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Play_01.ogg"
+          ]
+        }
+      },
+      "BASIC_attack": {
+        "VO_SC_004_Female_InfestedHuman_Attack_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Attack_01.ogg"
+          ]
+        }
+      },
+      "BASIC_death": {
+        "VO_SC_004_Female_InfestedHuman_Death_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Death_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_WEAPON_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_WEAPON_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_WEAPON_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_MANA_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_MANA_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_NEED_MANA_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_MINION_ATTACKED_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_MINION_ATTACKED_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_MINION_ATTACKED_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_I_ATTACKED_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_I_ATTACKED_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_I_ATTACKED_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_SUMMON_SICKNESS_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_SUMMON_SICKNESS_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_SUMMON_SICKNESS_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_HAND_FULL_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_HAND_FULL_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_HAND_FULL_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_FULL_MINIONS_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_FULL_MINIONS_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_FULL_MINIONS_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_STEALTH_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_STEALTH_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_STEALTH_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_PLAY_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_PLAY_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_PLAY_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_TARGET_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_TARGET_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_TARGET_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_TAUNT_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_TAUNT_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_TAUNT_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_ERROR_GENERIC_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_ERROR_GENERIC_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_ERROR_GENERIC_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_LUNAR_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_LUNAR_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_LUNAR_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HOLIDAYS_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HOLIDAYS_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HOLIDAYS_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NEW_YEAR_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_Wow_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_Wow_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_Wow_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_FIRE_FESTIVAL_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_FIRE_FESTIVAL_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_FIRE_FESTIVAL_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_PIRATE_DAY_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_PIRATE_DAY_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_PIRATE_DAY_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HALLOWEEN_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HALLOWEEN_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_HAPPY_HALLOWEEN_01.ogg"
+          ]
+        }
+      },
+      "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NOBLEGARDEN_01": {
+        "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NOBLEGARDEN_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_HAPPY_NOBLEGARDEN_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Greetings_01": {
+        "VO_SC_004_Female_InfestedHuman_Greetings_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Greetings_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Well_Played_01": {
+        "VO_SC_004_Female_InfestedHuman_Well_Played_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Well_Played_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Oops_01": {
+        "VO_SC_004_Female_InfestedHuman_Oops_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Oops_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Threaten_01": {
+        "VO_SC_004_Female_InfestedHuman_Threaten_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Threaten_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Thanks_01": {
+        "VO_SC_004_Female_InfestedHuman_Thanks_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Thanks_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Sorry_01": {
+        "VO_SC_004_Female_InfestedHuman_Sorry_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Sorry_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Concede_01": {
+        "VO_SC_004_Female_InfestedHuman_Concede_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Concede_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Time_01": {
+        "VO_SC_004_Female_InfestedHuman_Time_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Time_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Thinking_01": {
+        "VO_SC_004_Female_InfestedHuman_Thinking_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Thinking_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Thinking_02": {
+        "VO_SC_004_Female_InfestedHuman_Thinking_02": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Thinking_02.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Thinking_03": {
+        "VO_SC_004_Female_InfestedHuman_Thinking_03": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Thinking_03.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_LowCards_01": {
+        "VO_SC_004_Female_InfestedHuman_LowCards_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_LowCards_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_NoCards_01": {
+        "VO_SC_004_Female_InfestedHuman_NoCards_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_NoCards_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_Wow_01": {
+        "VO_SC_004_Female_InfestedHuman_Wow_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Wow_01.ogg"
+          ]
+        }
+      },
+      "VO_SC_004_Female_InfestedHuman_MIRROR_GREETINGS_01": {
+        "VO_SC_004_Female_InfestedHuman_MIRROR_GREETINGS_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_MIRROR_GREETINGS_01.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 1,
+    "displayName": "Kerrigan, Queen of Blades ×1"
+  },
+  {
+    "id": "SC_015",
+    "dbfId": 113576,
+    "name": "Nydus Worm",
+    "text": "Draw two Zerg cards. They cost (1) less.",
+    "set": "Heroes_of_starcraft",
+    "classes": [
+      "DEATHKNIGHT",
+      "HUNTER",
+      "WARLOCK",
+      "DEMONHUNTER"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Common",
+    "mechanics": [
+      "ZERG"
+    ],
+    "artist": "Gabor Szikszai",
+    "flavor": "How did they fit an ultralisk in there!?",
+    "audio2": {
+      "BASIC_play": {
+        "VO_SC_004_Female_InfestedHuman_Trigger_NydusWorm_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Trigger_NydusWorm_01.ogg"
+          ]
+        },
+        "VO_HERO_10aw_Female_InfestedHuman_Trigger_NydusWorm_01": {
+          "mainSounds": [
+            "VO_HERO_10aw_Female_InfestedHuman_Trigger_NydusWorm_01.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 2,
+    "displayName": "Nydus Worm ×2"
+  },
+  {
+    "id": "SC_019",
+    "dbfId": 113664,
+    "name": "Ultralisk Cavern",
+    "text": "[x]Deal 1 damage\nto all enemies.\n<b>Deathrattle:</b> Summon an\n8/8 Ultralisk with <b>Rush</b>.",
+    "set": "Heroes_of_starcraft",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Location",
+    "health": 3,
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Common",
+    "mechanics": [
+      "DEATHRATTLE",
+      "ZERG",
+      "DEAL_DAMAGE"
+    ],
+    "referencedTags": [
+      "RUSH"
+    ],
+    "artist": "Mooncolony",
+    "relatedCardDbfIds": [
+      112854
+    ],
+    "flavor": "Don't let your ultralisk get stuck on a ramp.",
+    "countFromDeck": 2,
+    "displayName": "Ultralisk Cavern ×2"
+  },
+  {
+    "id": "SC_020",
+    "dbfId": 113667,
+    "name": "Consume",
+    "text": "[x]Remove 1 Durability\nfrom a friendly location\nto restore #8 Health to\nyour hero.",
+    "set": "Heroes_of_starcraft",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 1,
+    "rarity": "Rare",
+    "mechanics": [
+      "ZERG",
+      "RESTORE_HEALTH"
+    ],
+    "artist": "Jason Kang",
+    "flavor": "What are you looking at? This isn't a mukbang.",
+    "audio2": {
+      "BASIC_play": {
+        "VO_SC_004_Female_InfestedHuman_Trigger_Consume_01": {
+          "mainSounds": [
+            "VO_SC_004_Female_InfestedHuman_Trigger_Consume_01.ogg"
+          ]
+        }
+      }
+    },
+    "countFromDeck": 2,
+    "displayName": "Consume ×2"
+  },
+  {
+    "id": "FIR_954",
+    "dbfId": 115753,
+    "name": "Conflagrate",
+    "text": "Deal $5 damage to a minion. Its owner draws a card.",
+    "set": "Embers_of_the_world_tree",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 1,
+    "faction": "NEUTRAL",
+    "rarity": "Rare",
+    "spellSchool": "FIRE",
+    "mechanics": [
+      "DEAL_DAMAGE"
+    ],
+    "artist": "Vlad Botos",
+    "flavor": "From the ashes, a new card is drawn.",
+    "countFromDeck": 2,
+    "displayName": "Conflagrate ×2"
+  },
+  {
+    "id": "TLC_100",
+    "dbfId": 117762,
+    "name": "Elise the Navigator",
+    "text": "<b>Battlecry:</b> If your deck started with 10 cards of different Costs, craft a custom location.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 3,
+    "health": 5,
+    "collectible": true,
+    "cost": 4,
+    "rarity": "Legendary",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "artist": "Tee Fuyuan",
+    "availableAsDiamond": true,
+    "relatedCardDbfIds": [
+      117765,
+      117764,
+      117763,
+      117793,
+      117808,
+      117809,
+      117768,
+      117769,
+      117770,
+      117842,
+      117843,
+      117844,
+      117779,
+      117780,
+      117781,
+      117774,
+      117778,
+      117777,
+      117784,
+      117785,
+      117786
+    ],
+    "flavor": "\"I've seen that stump before. We must be getting close!\"",
+    "countFromDeck": 1,
+    "displayName": "Elise the Navigator ×1"
+  },
+  {
+    "id": "TLC_106",
+    "dbfId": 117877,
+    "name": "Endbringer Umbra",
+    "text": "[x]<b>Battlecry:</b> Trigger the\n<b>Deathrattles</b> of 5\nfriendly minions that\ndied this game.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 6,
+    "health": 6,
+    "collectible": true,
+    "cost": 7,
+    "rarity": "Legendary",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "referencedTags": [
+      "DEATHRATTLE"
+    ],
+    "artist": "Matt Dixon",
+    "flavor": "After many years of exile, Umbra is so close to returning to her city. When she arrives, she will make sure the Tortollans get what they deserve...",
+    "countFromDeck": 1,
+    "displayName": "Endbringer Umbra ×1"
+  },
+  {
+    "id": "TLC_451",
+    "dbfId": 117892,
+    "name": "Cursed Catacombs",
+    "text": "<b>Discover</b> another\ncard from your deck. Make it <b>Temporary</b>.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "WARLOCK",
+    "playerClass": "Warlock",
+    "classes": [
+      "WARLOCK"
+    ],
+    "type": "Spell",
+    "collectible": true,
+    "cost": 0,
+    "rarity": "Epic",
+    "spellSchool": "FEL",
+    "mechanics": [
+      "DISCOVER"
+    ],
+    "referencedTags": [
+      "TEMPORARY"
+    ],
+    "artist": "BOSi Studio",
+    "flavor": "The minion is now permanently cursed. Temporarily.",
+    "countFromDeck": 2,
+    "displayName": "Cursed Catacombs ×2"
+  },
+  {
+    "id": "TLC_252",
+    "dbfId": 118252,
+    "name": "Dissolving Ooze",
+    "text": "[x]<b>Battlecry:</b> Destroy a\nfriendly minion. Spit out\nthe Bones of its Attack and\nHealth into your hand.",
+    "set": "Lost_city_of_ungoro",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 3,
+    "health": 3,
+    "collectible": true,
+    "cost": 3,
+    "faction": "NEUTRAL",
+    "rarity": "Rare",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "artist": "Ivan Fomin",
+    "relatedCardDbfIds": [
+      117614
+    ],
+    "flavor": "Ooze\nOoz\nOo\nO",
+    "countFromDeck": 1,
+    "displayName": "Dissolving Ooze ×1"
+  },
+  {
+    "id": "DINO_410",
+    "dbfId": 118487,
+    "name": "The Egg of Khelos",
+    "text": "[x]<b>Deathrattle:</b> Summon a\nslightly cracked Egg. <i>(Break\n5 times to hatch a 20/20\nBeast with <b>Taunt</b>!)</i>",
+    "set": "Day_of_rebirth",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 0,
+    "health": 3,
+    "collectible": true,
+    "cost": 3,
+    "rarity": "Legendary",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "referencedTags": [
+      "TAUNT"
+    ],
+    "artist": "Vlad Botos",
+    "relatedCardDbfIds": [
+      122542,
+      122543,
+      122545,
+      122546,
+      118487
+    ],
+    "flavor": "Thousands upon thousands of years Khelos has been waiting to hatch. Hopefully you won't have to wait that long.",
+    "countFromDeck": 1,
+    "displayName": "The Egg of Khelos ×1"
+  },
+  {
+    "id": "DINO_411",
+    "dbfId": 118496,
+    "name": "Holy Eggbearer",
+    "text": "<b>Battlecry:</b> Draw a\n0-Attack minion.",
+    "set": "Day_of_rebirth",
+    "cardClass": "NEUTRAL",
+    "playerClass": "Neutral",
+    "classes": [
+      "NEUTRAL"
+    ],
+    "type": "Minion",
+    "attack": 1,
+    "health": 2,
+    "collectible": true,
+    "cost": 2,
+    "rarity": "Rare",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "artist": "Bima Kusuma",
+    "flavor": "If this goes poorly, there's always a job as the Holy Breakfast Chef!",
+    "countFromDeck": 2,
+    "displayName": "Holy Eggbearer ×2"
+  }
+]
